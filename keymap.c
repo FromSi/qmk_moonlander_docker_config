@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_LEFT,             KC_RIGHT,            KC_RPRN,             KC_COLN,             KC_NO,               KC_PSCR,             SEND_PASSWORD,
 
     // TWO
-    /* LEFT  */ KC_NO,               KC_NO,               KC_X,                KC_Y,                KC_P,                KC_NO,               KC_EXLM,
+    /* LEFT  */ KC_LEFT_GUI,         KC_NO,               KC_X,                KC_Y,                KC_P,                KC_NO,               KC_EXLM,
     /* RIGHT */ KC_QUES,             KC_F,                KC_G,                KC_C,                KC_R,                KC_L,                KC_NO,
 
     // THREE
@@ -101,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_LEFT,             KC_RIGHT,            KC_RPRN,             KC_COLN,             KC_NO,               KC_PSCR,             SEND_PASSWORD,
 
     // TWO
-    /* LEFT  */ KC_NO,               RU_SHTI,             RU_TSE,              RU_U,                RU_IE,               RU_EF,               RU_EXLM,
+    /* LEFT  */ KC_LEFT_GUI,         RU_SHTI,             RU_TSE,              RU_U,                RU_IE,               RU_EF,               RU_EXLM,
     /* RIGHT */ RU_QUES,             RU_SHCH,             RU_GHE,              RU_TE,               RU_EN,               RU_ZE,               RU_HARD,
 
     // THREE
@@ -127,7 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_LEFT,             KC_RIGHT,            KC_RPRN,             KC_COLN,             KC_NO,               KC_PSCR,             SEND_PASSWORD,
 
     // TWO
-    /* LEFT  */ KC_NO,               LCTL(KC_Q),          LCTL(KC_W),          LCTL(KC_E),          LCTL(KC_R),          KC_NO,               KC_EXLM,
+    /* LEFT  */ KC_LEFT_GUI,         LCTL(KC_Q),          LCTL(KC_W),          LCTL(KC_E),          LCTL(KC_R),          KC_NO,               KC_EXLM,
     /* RIGHT */ KC_QUES,             KC_NO,               LGUI(KC_5),          LGUI(KC_6),          LGUI(KC_7),          KC_NO,               KC_NO,
 
     // THREE
@@ -153,11 +153,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_LEFT,             KC_RIGHT,            KC_RPRN,             KC_COLN,             KC_NO,               KC_PSCR,             SEND_PASSWORD,
 
     // TWO
-    /* LEFT  */ KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_EXLM,
+    /* LEFT  */ KC_LEFT_GUI,         KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_EXLM,
     /* RIGHT */ KC_QUES,             KC_NO,               LALT(LGUI(KC_H)),    LALT(LGUI(KC_J)),    LALT(LGUI(KC_K)),    LALT(LGUI(KC_L)),    KC_NO,
 
     // THREE
-    /* LEFT  */ KC_TAB,              LGUI(KC_G),          LGUI(KC_S),          LGUI(KC_F),          LGUI(KC_D),          KC_NO,               KC_MINUS,
+    /* LEFT  */ KC_TAB,              LGUI(KC_G),          LGUI(KC_S),          LGUI(KC_F),          LGUI(KC_D),          LGUI(KC_Z),          KC_MINUS,
     /* RIGHT */ KC_QUOTE,            KC_NO,               LGUI(KC_H),          LGUI(KC_J),          LGUI(KC_K),          LGUI(KC_L),          KC_NO,
 
     // FOUR
@@ -179,7 +179,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_LEFT,             KC_RIGHT,            KC_RPRN,             KC_COLN,             KC_NO,               KC_PSCR,             SEND_PASSWORD,
 
     // TWO
-    /* LEFT  */ KC_NO,               KC_TILD,             KC_GRAVE,            KC_PERC,             KC_AT,               KC_NO,               KC_EXLM,
+    /* LEFT  */ KC_LEFT_GUI,         KC_TILD,             KC_GRAVE,            KC_PERC,             KC_AT,               KC_NO,               KC_EXLM,
     /* RIGHT */ KC_QUES,             KC_NO,               KC_LBRC,             KC_RBRC,             ST_MACRO_1,          ST_MACRO_2,          KC_NO,
 
     // THREE
@@ -205,7 +205,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_LEFT,             KC_RIGHT,            KC_RPRN,             KC_COLN,             KC_NO,               KC_PSCR,             SEND_PASSWORD,
 
     // TWO
-    /* LEFT  */ KC_NO,               KC_F8,               KC_F7,               KC_F6,               KC_F5,               KC_NO,               KC_EXLM,
+    /* LEFT  */ KC_LEFT_GUI,         KC_F8,               KC_F7,               KC_F6,               KC_F5,               KC_NO,               KC_EXLM,
     /* RIGHT */ KC_QUES,             KC_NO,               KC_4,                KC_5,                KC_6,                KC_NO,               KC_NO,
 
     // THREE
@@ -257,7 +257,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_LEFT,             KC_RIGHT,            KC_RPRN,             KC_COLN,             KC_NO,               KC_PSCR,             SEND_PASSWORD,
 
     // TWO
-    /* LEFT  */ KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_EXLM,
+    /* LEFT  */ KC_LEFT_GUI,         KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_EXLM,
     /* RIGHT */ KC_QUES,             KC_NO,               KC_HOME,             KC_PGDN,             KC_PAGE_UP,          KC_END,              KC_NO,
 
     // THREE
@@ -283,7 +283,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_LEFT,             KC_RIGHT,            KC_RPRN,             KC_COLN,             KC_NO,               KC_PSCR,             SEND_PASSWORD,
 
     // TWO
-    /* LEFT  */ KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_EXLM,
+    /* LEFT  */ KC_LEFT_GUI,         KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_EXLM,
     /* RIGHT */ KC_QUES,             QK_BOOT,             RGB_VAI,             RGB_VAD,             KC_NO,               KC_NO,               KC_NO,
 
     // THREE
@@ -309,7 +309,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_LEFT,             KC_RIGHT,            KC_RPRN,             KC_COLN,             KC_NO,               KC_PSCR,             SEND_PASSWORD,
 
     // TWO
-    /* LEFT  */ KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_EXLM,
+    /* LEFT  */ KC_LEFT_GUI,         KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_EXLM,
     /* RIGHT */ KC_QUES,             KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,
 
     // THREE
@@ -363,7 +363,7 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT] = {
     /* RIGHT */ COLOR_GREEN,         COLOR_GREEN,         COLOR_GOLD,          COLOR_GOLD,          COLOR_BLACK,         COLOR_SPRINGGREEN,   COLOR_RED,
 
     // TWO
-    /* LEFT  */ COLOR_BLACK,         COLOR_BLACK,         COLOR_GREY,          COLOR_GREY,          COLOR_GREY,          COLOR_BLACK,         COLOR_GOLD,
+    /* LEFT  */ COLOR_SPRINGGREEN,   COLOR_BLACK,         COLOR_GREY,          COLOR_GREY,          COLOR_GREY,          COLOR_BLACK,         COLOR_GOLD,
     /* RIGHT */ COLOR_GOLD,          COLOR_GREY,          COLOR_GREY,          COLOR_GREY,          COLOR_GREY,          COLOR_GREY,          COLOR_BLACK,
 
     // THREE
@@ -389,7 +389,7 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT] = {
     /* RIGHT */ COLOR_GREEN,         COLOR_GREEN,         COLOR_GOLD,          COLOR_GOLD,          COLOR_BLACK,         COLOR_SPRINGGREEN,   COLOR_RED,
 
     // TWO
-    /* LEFT  */ COLOR_BLACK,         COLOR_CORAL,         COLOR_CORAL,         COLOR_CORAL,         COLOR_CORAL,         COLOR_CORAL,         COLOR_GOLD,
+    /* LEFT  */ COLOR_SPRINGGREEN,   COLOR_CORAL,         COLOR_CORAL,         COLOR_CORAL,         COLOR_CORAL,         COLOR_CORAL,         COLOR_GOLD,
     /* RIGHT */ COLOR_GOLD,          COLOR_CORAL,         COLOR_CORAL,         COLOR_CORAL,         COLOR_CORAL,         COLOR_CORAL,         COLOR_CORAL,
 
     // THREE
@@ -415,7 +415,7 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT] = {
     /* RIGHT */ COLOR_GREEN,         COLOR_GREEN,         COLOR_GOLD,          COLOR_GOLD,          COLOR_BLACK,         COLOR_SPRINGGREEN,   COLOR_RED,
 
     // TWO
-    /* LEFT  */ COLOR_BLACK,         COLOR_PURPLE,        COLOR_PURPLE,        COLOR_PURPLE,        COLOR_PURPLE,        COLOR_BLACK,         COLOR_GOLD,
+    /* LEFT  */ COLOR_SPRINGGREEN,   COLOR_PURPLE,        COLOR_PURPLE,        COLOR_PURPLE,        COLOR_PURPLE,        COLOR_BLACK,         COLOR_GOLD,
     /* RIGHT */ COLOR_GOLD,          COLOR_BLACK,         COLOR_PURPLE,        COLOR_PURPLE,        COLOR_PURPLE,        COLOR_BLACK,         COLOR_BLACK,
 
     // THREE
@@ -441,11 +441,11 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT] = {
     /* RIGHT */ COLOR_GREEN,         COLOR_GREEN,         COLOR_GOLD,          COLOR_GOLD,          COLOR_BLACK,         COLOR_SPRINGGREEN,   COLOR_RED,
 
     // TWO
-    /* LEFT  */ COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_GOLD,
+    /* LEFT  */ COLOR_SPRINGGREEN,   COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_GOLD,
     /* RIGHT */ COLOR_GOLD,          COLOR_BLACK,         COLOR_ORANGE,        COLOR_ORANGE,        COLOR_ORANGE,        COLOR_ORANGE,        COLOR_BLACK,
 
     // THREE
-    /* LEFT  */ COLOR_SPRINGGREEN,   COLOR_ORANGE,        COLOR_ORANGE,        COLOR_ORANGE,        COLOR_ORANGE,        COLOR_BLACK,         COLOR_GOLD,
+    /* LEFT  */ COLOR_SPRINGGREEN,   COLOR_ORANGE,        COLOR_ORANGE,        COLOR_ORANGE,        COLOR_ORANGE,        COLOR_ORANGE,        COLOR_GOLD,
     /* RIGHT */ COLOR_GOLD,          COLOR_BLACK,         COLOR_ORANGE,        COLOR_ORANGE,        COLOR_ORANGE,        COLOR_ORANGE,        COLOR_BLACK,
 
     // FOUR
@@ -467,7 +467,7 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT] = {
     /* RIGHT */ COLOR_GREEN,         COLOR_GREEN,         COLOR_GOLD,          COLOR_GOLD,          COLOR_BLACK,         COLOR_SPRINGGREEN,   COLOR_RED,
 
     // TWO
-    /* LEFT  */ COLOR_BLACK,         COLOR_GOLD,          COLOR_GOLD,          COLOR_GOLD,          COLOR_GOLD,          COLOR_BLACK,         COLOR_GOLD,
+    /* LEFT  */ COLOR_SPRINGGREEN,   COLOR_GOLD,          COLOR_GOLD,          COLOR_GOLD,          COLOR_GOLD,          COLOR_BLACK,         COLOR_GOLD,
     /* RIGHT */ COLOR_GOLD,          COLOR_BLACK,         COLOR_GOLD,          COLOR_GOLD,          COLOR_GOLD,          COLOR_GOLD,          COLOR_BLACK,
 
     // THREE
@@ -493,7 +493,7 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT] = {
     /* RIGHT */ COLOR_GREEN,         COLOR_GREEN,         COLOR_GOLD,          COLOR_GOLD,          COLOR_BLACK,         COLOR_SPRINGGREEN,   COLOR_RED,
 
     // TWO
-    /* LEFT  */ COLOR_BLACK,         COLOR_CYAN,          COLOR_CYAN,          COLOR_CYAN,          COLOR_CYAN,          COLOR_BLACK,         COLOR_GOLD,
+    /* LEFT  */ COLOR_SPRINGGREEN,   COLOR_CYAN,          COLOR_CYAN,          COLOR_CYAN,          COLOR_CYAN,          COLOR_BLACK,         COLOR_GOLD,
     /* RIGHT */ COLOR_GOLD,          COLOR_BLACK,         COLOR_CYAN,          COLOR_CYAN,          COLOR_CYAN,          COLOR_BLACK,         COLOR_BLACK,
 
     // THREE
@@ -545,7 +545,7 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT] = {
     /* RIGHT */ COLOR_GREEN,         COLOR_GREEN,         COLOR_GOLD,          COLOR_GOLD,          COLOR_BLACK,         COLOR_SPRINGGREEN,   COLOR_RED,
 
     // TWO
-    /* LEFT  */ COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_GOLD,
+    /* LEFT  */ COLOR_SPRINGGREEN,   COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_GOLD,
     /* RIGHT */ COLOR_GOLD,          COLOR_BLACK,         COLOR_GREEN,         COLOR_GREEN,         COLOR_GREEN,         COLOR_GREEN,         COLOR_BLACK,
 
     // THREE
@@ -571,7 +571,7 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT] = {
     /* RIGHT */ COLOR_GREEN,         COLOR_GREEN,         COLOR_GOLD,          COLOR_GOLD,          COLOR_BLACK,         COLOR_SPRINGGREEN,   COLOR_RED,
 
     // TWO
-    /* LEFT  */ COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_GOLD,
+    /* LEFT  */ COLOR_SPRINGGREEN,   COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_GOLD,
     /* RIGHT */ COLOR_GOLD,          COLOR_RED,           COLOR_GREEN,         COLOR_GOLDENROD,     COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,
 
     // THREE
@@ -597,7 +597,7 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT] = {
     /* RIGHT */ COLOR_GREEN,         COLOR_GREEN,         COLOR_GOLD,          COLOR_GOLD,          COLOR_BLACK,         COLOR_SPRINGGREEN,   COLOR_RED,
 
     // TWO
-    /* LEFT  */ COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_GOLD,
+    /* LEFT  */ COLOR_SPRINGGREEN,   COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_GOLD,
     /* RIGHT */ COLOR_GOLD,          COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,         COLOR_BLACK,
 
     // THREE
