@@ -58,8 +58,6 @@ const uint8_t PROGMEM colormap[][3] = {
 
 enum custom_keycodes {
   RGB_SLD = ML_SAFE_RANGE,
-  SWITCH_MOD_MAIN,
-  SWITCH_MOD_RU,
   SEND_PASSWORD,
   ST_MACRO_1,
   ST_MACRO_2,
@@ -92,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // SIX
     /* LEFT  */ KC_LEFT_SHIFT,       KC_BSPC,             KC_ENTER,
-    /* RIGHT */ SWITCH_MOD_RU,       TG(MOD_MOVE),        KC_SPACE
+    /* RIGHT */ TO(MOD_RU),          TG(MOD_MOVE),        KC_SPACE
   ),
 
   [MOD_RU] = LAYOUT_moonlander(
@@ -118,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // SIX
     /* LEFT  */ KC_LEFT_SHIFT,       KC_BSPC,             KC_ENTER,
-    /* RIGHT */ SWITCH_MOD_MAIN,       TG(MOD_MOVE),        KC_SPACE
+    /* RIGHT */ TO(MOD_MAIN),        TG(MOD_MOVE),        KC_SPACE
   ),
 
   [MOD_WORKSPACE] = LAYOUT_moonlander(
@@ -406,7 +404,7 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT] = {
 
     // SIX
     /* LEFT  */ COLOR_SPRINGGREEN,   COLOR_SPRINGGREEN,   COLOR_SPRINGGREEN,
-    /* RIGHT */ COLOR_WHITE,         COLOR_BLACK,         COLOR_SPRINGGREEN
+    /* RIGHT */ COLOR_WHITE,         COLOR_GREEN,         COLOR_SPRINGGREEN
   },
 
   [MOD_WORKSPACE] = {
@@ -645,19 +643,19 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT] = {
 };
 
 void matrix_set_color(int layer, int key_index, int led_index) {
-    uint8_t color = pgm_read_byte(&ledmap[layer][key_index]);
+  uint8_t color = pgm_read_byte(&ledmap[layer][key_index]);
 
-    HSV hsv = {
-      .h = pgm_read_byte(&colormap[color][0]),
-      .s = pgm_read_byte(&colormap[color][1]),
-      .v = pgm_read_byte(&colormap[color][2]),
-    };
+  HSV hsv = {
+    .h = pgm_read_byte(&colormap[color][0]),
+    .s = pgm_read_byte(&colormap[color][1]),
+    .v = pgm_read_byte(&colormap[color][2]),
+  };
 
-    RGB rgb = hsv_to_rgb(hsv);
-    float f = (float) rgb_matrix_config.hsv.v / UINT8_MAX;
+  RGB rgb = hsv_to_rgb(hsv);
+  float f = (float) rgb_matrix_config.hsv.v / UINT8_MAX;
 
-    rgb_matrix_set_color(led_index, f * rgb.r, f * rgb.g, f * rgb.b);
-  }
+  rgb_matrix_set_color(led_index, f * rgb.r, f * rgb.g, f * rgb.b);
+}
 
 void keyboard_post_init_user(void) {
   rgb_matrix_enable();
@@ -752,26 +750,24 @@ bool rgb_matrix_indicators_user(void) {
   return true;
 }
 
+void switch_language_mod(bool _is_en_lang) {
+  static bool is_en_lang = true;
+
+  if (is_en_lang != _is_en_lang) {
+    is_en_lang = _is_en_lang;
+
+    register_code(KC_LSFT);
+    tap_code(KC_LALT);
+    unregister_code(KC_LSFT);
+  }
+}
+
+void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch_language_mod(get_highest_layer(layer_state) != MOD_RU);
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case SWITCH_MOD_MAIN:
-      if (record->event.pressed) { 
-        layer_move(MOD_MAIN);
-        register_code(KC_LSFT); 
-        tap_code(KC_LALT);
-        unregister_code(KC_LSFT);
-      }
-
-      break; 
-    case SWITCH_MOD_RU:
-      if (record->event.pressed) {
-        layer_move(MOD_RU);
-        register_code(KC_LSFT); 
-        tap_code(KC_LALT);
-        unregister_code(KC_LSFT);
-      } 
-
-      break;
     case SEND_PASSWORD:
       if (record->event.pressed) {
         SEND_STRING("32" SS_TAP(X_ENTER));
