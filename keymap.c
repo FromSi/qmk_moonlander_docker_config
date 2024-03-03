@@ -89,16 +89,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_LEFT,             KC_RIGHT,            KC_RPRN,             KC_COLN,             KC_NO,               KC_PSCR,             SEND_PASSWORD,
 
     // TWO
-    /* LEFT  */ KC_LEFT_GUI,         LCTL(KC_Q),          LCTL(KC_W),          LCTL(KC_E),          LCTL(KC_R),          KC_NO,               KC_EXLM,
-    /* RIGHT */ KC_QUES,             KC_NO,               LGUI(KC_5),          LGUI(KC_6),          LGUI(KC_7),          KC_NO,               KC_NO,
+    /* LEFT  */ KC_LEFT_GUI,         LCTL(KC_Q),          LCTL(KC_W),          LCTL(KC_E),          LCTL(KC_R),          LGUI(KC_ENTER),      KC_EXLM,
+    /* RIGHT */ KC_QUES,             KC_UP,               LGUI(KC_5),          LGUI(KC_6),          LGUI(KC_7),          KC_NO,               KC_NO,
 
     // THREE
     /* LEFT  */ KC_TAB,              LCTL(KC_A),          LCTL(KC_S),          LCTL(KC_D),          LCTL(KC_F),          LALT(KC_D),          KC_MINUS,
-    /* RIGHT */ KC_QUOTE,            KC_NO,               LGUI(KC_1),          LGUI(KC_2),          LGUI(KC_3),          LGUI(KC_4),          KC_NO,
+    /* RIGHT */ KC_QUOTE,            KC_DOWN,             LGUI(KC_1),          LGUI(KC_2),          LGUI(KC_3),          LGUI(KC_4),          KC_NO,
 
     // FOUR
     /* LEFT  */ KC_SPACE,            LCTL(KC_Z),          LCTL(KC_X),          LCTL(KC_C),          LCTL(KC_V),          LCTL(KC_SLASH),      /* EMPTY */
-    /* RIGHT */ /* EMPTY */          KC_NO,               LGUI(KC_8),          LGUI(KC_9),          LGUI(KC_0),          KC_NO,               KC_NO,
+    /* RIGHT */ /* EMPTY */          LGUI(KC_Z),          LGUI(KC_8),          LGUI(KC_9),          LGUI(KC_0),          KC_NO,               KC_NO,
 
     // FIVE
     /* LEFT  */ KC_COMMA,            KC_NO,               KC_NO,               KC_TRANSPARENT,      KC_NO,               /* EMPTY */          KC_LEFT_CTRL,
@@ -115,11 +115,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_LEFT,             KC_RIGHT,            KC_RPRN,             KC_COLN,             KC_NO,               KC_PSCR,             SEND_PASSWORD,
 
     // TWO
-    /* LEFT  */ KC_LEFT_GUI,         KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_EXLM,
+    /* LEFT  */ KC_LEFT_GUI,         KC_NO,               KC_NO,               KC_NO,               LGUI(KC_Z),          KC_NO,               KC_EXLM,
     /* RIGHT */ KC_QUES,             KC_NO,               LALT(LGUI(KC_H)),    LALT(LGUI(KC_J)),    LALT(LGUI(KC_K)),    LALT(LGUI(KC_L)),    KC_NO,
 
     // THREE
-    /* LEFT  */ KC_TAB,              LGUI(KC_G),          LGUI(KC_S),          LGUI(KC_F),          LGUI(KC_D),          LGUI(KC_Z),          KC_MINUS,
+    /* LEFT  */ KC_TAB,              LGUI(KC_G),          LGUI(KC_S),          LGUI(KC_F),          LGUI(KC_D),          KC_NO,               KC_MINUS,
     /* RIGHT */ KC_QUOTE,            KC_NO,               LGUI(KC_H),          LGUI(KC_J),          LGUI(KC_K),          LGUI(KC_L),          KC_NO,
 
     // FOUR
@@ -377,16 +377,16 @@ const uint16_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     /* RIGHT */ {RGB_GREEN},         {RGB_GREEN},         {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},         {RGB_SPRINGGREEN},   {RGB_RED},
 
     // TWO
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_BLACK},         {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_BLACK},         {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_BLACK},         {RGB_BLACK},
+    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_GOLD},
+    /* RIGHT */ {RGB_GOLD},          {RGB_GREEN},         {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_BLACK},         {RGB_BLACK},
 
     // THREE
     /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_BLACK},         {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_BLACK},
+    /* RIGHT */ {RGB_GOLD},          {RGB_GREEN},         {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_BLACK},
 
     // FOUR
     /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        /* EMPTY */
-    /* RIGHT */ /* EMPTY */          {RGB_BLACK},         {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_BLACK},         {RGB_BLACK},
+    /* RIGHT */ /* EMPTY */          {RGB_ORANGE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_BLACK},         {RGB_BLACK},
 
     // FIVE
     /* LEFT  */ {RGB_GOLD},          {RGB_BLACK},         {RGB_BLACK},         {RGB_WHITE},         {RGB_BLACK},         /* EMPTY */          {RGB_RED},
@@ -403,11 +403,11 @@ const uint16_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     /* RIGHT */ {RGB_GREEN},         {RGB_GREEN},         {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},         {RGB_SPRINGGREEN},   {RGB_RED},
 
     // TWO
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_GOLD},
+    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_ORANGE},        {RGB_BLACK},         {RGB_GOLD},
     /* RIGHT */ {RGB_GOLD},          {RGB_BLACK},         {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_BLACK},
 
     // THREE
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_GOLD},
+    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_BLACK},         {RGB_GOLD},
     /* RIGHT */ {RGB_GOLD},          {RGB_BLACK},         {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_BLACK},
 
     // FOUR
