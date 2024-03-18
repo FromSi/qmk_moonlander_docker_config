@@ -313,7 +313,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_NO,               /* EMPTY */          KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_RIGHT_CTRL,
 
     // SIX
-    /* LEFT  */ KC_SPACE,            KC_LALT,             KC_NO,
+    /* LEFT  */ KC_SPACE,            KC_LALT,             KC_ENTER,
     /* RIGHT */ KC_L,                KC_RALT,             KC_NO
   ),
 };
@@ -601,7 +601,7 @@ const uint16_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     /* RIGHT */ {RGB_BLACK},         /* EMPTY */          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_SPRINGGREEN},
 
     // SIX
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_BLACK},
+    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
     /* RIGHT */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_BLACK}
   },
 };
