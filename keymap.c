@@ -6,7 +6,6 @@
 extern rgb_config_t rgb_matrix_config;
 
 enum modmap_indexes {
-  MOD_NO = 20,
   MOD_MAIN = 0,
   MOD_RU = 1,
   MOD_MOUSE = 2,
@@ -18,16 +17,19 @@ enum modmap_indexes {
   MOD_MUSIC = 8,
   MOD_SYMBOL = 9,
   MOD_GAME = 10,
+  MOD_NO = 20,
 };
 
 enum custom_keycodes {
   RGB_SLD = ML_SAFE_RANGE,
   SEND_PASSWORD,
-  ST_MACRO_1,
-  ST_MACRO_2,
-  ST_MACRO_3,
-  ST_MACRO_4,
-  ST_MACRO_5,
+  TO_MAIN,
+  TO_SWITCH_MAIN,
+  SYMBOL_MACRO_1,
+  SYMBOL_MACRO_2,
+  SYMBOL_MACRO_3,
+  SYMBOL_MACRO_4,
+  SYMBOL_MACRO_5,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -49,12 +51,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ /* EMPTY */          KC_B,                KC_M,                KC_W,                KC_V,                KC_Z,                KC_NO,
 
     // FIVE
-    /* LEFT  */ KC_COMMA,            TG(MOD_MOUSE),       TG(MOD_GAME),        TG(MOD_WORKSPACE),   TG(MOD_SYMBOL),      /* EMPTY */          KC_LEFT_CTRL,
-    /* RIGHT */ KC_LALT,             /* EMPTY */          TG(MOD_NUMBER),      TG(MOD_WINDOW),      TO(MOD_MUSIC),       TG(MOD_CONFIG),      KC_DOT,
+    /* LEFT  */ KC_COMMA,            TO(MOD_MOUSE),       TO(MOD_GAME),        TO(MOD_WORKSPACE),   TO(MOD_SYMBOL),      /* EMPTY */          KC_LEFT_CTRL,
+    /* RIGHT */ KC_LALT,             /* EMPTY */          TO(MOD_NUMBER),      TO(MOD_WINDOW),      TO(MOD_MUSIC),       TO(MOD_CONFIG),      KC_DOT,
 
     // SIX
     /* LEFT  */ KC_LEFT_SHIFT,       KC_BSPC,             KC_ENTER,
-    /* RIGHT */ TO(MOD_RU),          TG(MOD_MOVE),        KC_SPACE
+    /* RIGHT */ TO_SWITCH_MAIN,      TO(MOD_MOVE),        KC_SPACE
   ),
 
   [MOD_RU] = LAYOUT_moonlander(
@@ -75,12 +77,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ /* EMPTY */          RU_SHA,              RU_SOFT,             RU_BE,               RU_YU,               RU_HA,               RU_YO,
 
     // FIVE
-    /* LEFT  */ RU_COMM,             TG(MOD_MOUSE),       TG(MOD_GAME),        TG(MOD_WORKSPACE),   TG(MOD_SYMBOL),      /* EMPTY */          KC_LEFT_CTRL,
-    /* RIGHT */ KC_LALT,             /* EMPTY */          TG(MOD_NUMBER),      TG(MOD_WINDOW),      TO(MOD_MUSIC),       TG(MOD_CONFIG),      RU_DOT,
+    /* LEFT  */ RU_COMM,             TO(MOD_MOUSE),       TO(MOD_GAME),        TO(MOD_WORKSPACE),   TO(MOD_SYMBOL),      /* EMPTY */          KC_LEFT_CTRL,
+    /* RIGHT */ KC_LALT,             /* EMPTY */          TO(MOD_NUMBER),      TO(MOD_WINDOW),      TO(MOD_MUSIC),       TO(MOD_CONFIG),      RU_DOT,
 
     // SIX
     /* LEFT  */ KC_LEFT_SHIFT,       KC_BSPC,             KC_ENTER,
-    /* RIGHT */ TO(MOD_MAIN),        TG(MOD_MOVE),        KC_SPACE
+    /* RIGHT */ TO_SWITCH_MAIN,      TO(MOD_MOVE),        KC_SPACE
   ),
 
   [MOD_WORKSPACE] = LAYOUT_moonlander(
@@ -101,8 +103,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ /* EMPTY */          LGUI(KC_Z),          LGUI(KC_8),          LGUI(KC_9),          LGUI(KC_0),          KC_NO,               KC_NO,
 
     // FIVE
-    /* LEFT  */ KC_COMMA,            KC_NO,               KC_NO,               KC_TRANSPARENT,      KC_NO,               /* EMPTY */          KC_LEFT_CTRL,
-    /* RIGHT */ KC_LALT,             /* EMPTY */          KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_DOT,
+    /* LEFT  */ KC_COMMA,            TO(MOD_MOUSE),       TO(MOD_GAME),        TO_MAIN,             TO(MOD_SYMBOL),      /* EMPTY */          KC_LEFT_CTRL,
+    /* RIGHT */ KC_LALT,             /* EMPTY */          TO(MOD_NUMBER),      TO(MOD_WINDOW),      TO(MOD_MUSIC),       TO(MOD_CONFIG),      KC_DOT,
 
     // SIX
     /* LEFT  */ KC_LEFT_SHIFT,       KC_BSPC,             KC_ENTER,
@@ -127,8 +129,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ /* EMPTY */          KC_NO,               LALT(LGUI(LSFT(KC_H))),LALT(LGUI(LSFT(KC_J))),LALT(LGUI(LSFT(KC_K))),LALT(LGUI(LSFT(KC_L))),KC_NO,
 
     // FIVE
-    /* LEFT  */ KC_COMMA,            KC_NO,               KC_NO,               KC_NO,               KC_NO,               /* EMPTY */          KC_LEFT_CTRL,
-    /* RIGHT */ KC_LALT,             /* EMPTY */          KC_NO,               KC_TRANSPARENT,      KC_NO,               KC_NO,               KC_DOT,
+    /* LEFT  */ KC_COMMA,            TO(MOD_MOUSE),       TO(MOD_GAME),        TO(MOD_WORKSPACE),   TO(MOD_SYMBOL),      /* EMPTY */          KC_LEFT_CTRL,
+    /* RIGHT */ KC_LALT,             /* EMPTY */          TO(MOD_NUMBER),      TO_MAIN,             TO(MOD_MUSIC),       TO(MOD_CONFIG),      KC_DOT,
 
     // SIX
     /* LEFT  */ KC_LEFT_SHIFT,       KC_BSPC,             KC_ENTER,
@@ -142,7 +144,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // TWO
     /* LEFT  */ KC_LEFT_GUI,         KC_TILD,             KC_GRAVE,            KC_PERC,             KC_AT,               KC_NO,               KC_EXLM,
-    /* RIGHT */ KC_QUES,             KC_NO,               KC_LBRC,             KC_RBRC,             ST_MACRO_1,          ST_MACRO_2,          KC_NO,
+    /* RIGHT */ KC_QUES,             KC_NO,               KC_LBRC,             KC_RBRC,             SYMBOL_MACRO_1,      SYMBOL_MACRO_2,      KC_NO,
 
     // THREE
     /* LEFT  */ KC_TAB,              KC_EQUAL,            KC_PIPE,             KC_AMPR,             KC_DLR,              KC_KP_PLUS,          KC_MINUS,
@@ -150,11 +152,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // FOUR
     /* LEFT  */ KC_SPACE,            KC_CIRC,             KC_HASH,             KC_ASTR,             KC_SLASH,            KC_NO,               /* EMPTY */
-    /* RIGHT */ /* EMPTY */          KC_NO,               KC_LCBR,             KC_RCBR,             ST_MACRO_3,          ST_MACRO_4,          KC_NO,
+    /* RIGHT */ /* EMPTY */          KC_NO,               KC_LCBR,             KC_RCBR,             SYMBOL_MACRO_3,      SYMBOL_MACRO_4,      KC_NO,
 
     // FIVE
-    /* LEFT  */ KC_COMMA,            KC_NO,               KC_NO,               KC_NO,               KC_TRANSPARENT,      /* EMPTY */          KC_LEFT_CTRL,
-    /* RIGHT */ KC_LALT,             /* EMPTY */          KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_DOT,
+    /* LEFT  */ KC_COMMA,            TO(MOD_MOUSE),       TO(MOD_GAME),        TO(MOD_WORKSPACE),   TO_MAIN,             /* EMPTY */          KC_LEFT_CTRL,
+    /* RIGHT */ KC_LALT,             /* EMPTY */          TO(MOD_NUMBER),      TO(MOD_WINDOW),      TO(MOD_MUSIC),       TO(MOD_CONFIG),      KC_DOT,
 
     // SIX
     /* LEFT  */ KC_LEFT_SHIFT,       KC_BSPC,             KC_ENTER,
@@ -179,8 +181,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ /* EMPTY */          KC_NO,               KC_7,                KC_8,                KC_9,                KC_NO,               KC_NO,
 
     // FIVE
-    /* LEFT  */ KC_COMMA,            RU_COMM,             KC_NO,               KC_NO,               KC_NO,               /* EMPTY */          KC_LEFT_CTRL,
-    /* RIGHT */ KC_LALT,             /* EMPTY */          KC_TRANSPARENT,      KC_NO,               KC_NO,               RU_DOT,              KC_DOT,
+    /* LEFT  */ KC_COMMA,            TO(MOD_MOUSE),       TO(MOD_GAME),        TO(MOD_WORKSPACE),   TO(MOD_SYMBOL),      /* EMPTY */          KC_LEFT_CTRL,
+    /* RIGHT */ KC_LALT,             /* EMPTY */          TO_MAIN,             TO(MOD_WINDOW),      TO(MOD_MUSIC),       TO(MOD_CONFIG),      KC_DOT,
 
     // SIX
     /* LEFT  */ KC_LEFT_SHIFT,       KC_BSPC,             KC_ENTER,
@@ -210,7 +212,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // SIX
     /* LEFT  */ TOGGLE_LAYER_COLOR,  RGB_MODE_FORWARD,    RGB_TOG,
-    /* RIGHT */ TO(MOD_MAIN),          KC_NO,               KC_NO
+    /* RIGHT */ TO_MAIN,             KC_NO,               KC_NO
   ),
 
   [MOD_MOVE] = LAYOUT_moonlander(
@@ -231,12 +233,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ /* EMPTY */          KC_NO,               KC_H,                KC_J,                KC_K,                KC_L,                KC_NO,
 
     // FIVE
-    /* LEFT  */ KC_COMMA,            KC_NO,               KC_NO,               KC_NO,               KC_NO,               /* EMPTY */          KC_LEFT_CTRL,
-    /* RIGHT */ KC_LALT,             /* EMPTY */          KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_DOT,
+    /* LEFT  */ KC_COMMA,            TO(MOD_MOUSE),       TO(MOD_GAME),        TO(MOD_WORKSPACE),   TO(MOD_SYMBOL),      /* EMPTY */          KC_LEFT_CTRL,
+    /* RIGHT */ KC_LALT,             /* EMPTY */          TO(MOD_NUMBER),      TO(MOD_WINDOW),      TO(MOD_MUSIC),       TO(MOD_CONFIG),      KC_DOT,
 
     // SIX
     /* LEFT  */ KC_LEFT_SHIFT,       KC_BSPC,             KC_ENTER,
-    /* RIGHT */ KC_NO,               KC_TRANSPARENT,      KC_SPACE
+    /* RIGHT */ KC_NO,               TO_MAIN,             KC_SPACE
   ),
 
   [MOD_CONFIG] = LAYOUT_moonlander(
@@ -257,8 +259,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ /* EMPTY */          LGUI(KC_Z),          KC_MEDIA_NEXT_TRACK, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_STOP,       KC_MEDIA_PREV_TRACK, KC_NO,
 
     // FIVE
-    /* LEFT  */ KC_COMMA,            KC_NO,               KC_NO,               KC_NO,               KC_NO,               /* EMPTY */          KC_LEFT_CTRL,
-    /* RIGHT */ KC_LALT,             /* EMPTY */          KC_NO,               KC_NO,               KC_NO,               KC_TRANSPARENT,      KC_DOT,
+    /* LEFT  */ KC_COMMA,            TO(MOD_MOUSE),       TO(MOD_GAME),        TO(MOD_WORKSPACE),   TO(MOD_SYMBOL),      /* EMPTY */          KC_LEFT_CTRL,
+    /* RIGHT */ KC_LALT,             /* EMPTY */          TO(MOD_NUMBER),      TO(MOD_WINDOW),      TO(MOD_MUSIC),       TO_MAIN,             KC_DOT,
 
     // SIX
     /* LEFT  */ KC_LEFT_SHIFT,       KC_BSPC,             KC_ENTER,
@@ -283,8 +285,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ /* EMPTY */          KC_NO,               KC_MS_WH_LEFT,       KC_MS_WH_DOWN,       KC_MS_WH_UP,         KC_MS_WH_RIGHT,      KC_NO,
 
     // FIVE
-    /* LEFT  */ KC_COMMA,            KC_TRANSPARENT,      KC_NO,               KC_NO,               KC_NO,               /* EMPTY */          KC_LEFT_CTRL,
-    /* RIGHT */ KC_MS_BTN4,          /* EMPTY */          KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_DOT,
+    /* LEFT  */ KC_COMMA,            TO_MAIN,             TO(MOD_GAME),        TO(MOD_WORKSPACE),   TO(MOD_SYMBOL),      /* EMPTY */          KC_LEFT_CTRL,
+    /* RIGHT */ KC_MS_BTN4,          /* EMPTY */          TO(MOD_NUMBER),      TO(MOD_WINDOW),      TO(MOD_MUSIC),       TO(MOD_CONFIG),      KC_DOT,
 
     // SIX
     /* LEFT  */ KC_LEFT_SHIFT,       KC_BSPC,             KC_ENTER,
@@ -309,8 +311,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ /* EMPTY */          KC_N,                KC_M,                KC_COMM,             KC_DOT,              KC_SLASH,            KC_RIGHT_SHIFT,
 
     // FIVE
-    /* LEFT  */ KC_LEFT_CTRL,        KC_NO,               KC_TRANSPARENT,      KC_NO,               KC_NO,               /* EMPTY */          KC_NO,
-    /* RIGHT */ KC_NO,               /* EMPTY */          KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_RIGHT_CTRL,
+    /* LEFT  */ KC_LEFT_CTRL,        TO(MOD_MOUSE),       TO_MAIN,             TO(MOD_WORKSPACE),   TO(MOD_SYMBOL),      /* EMPTY */          KC_NO,
+    /* RIGHT */ KC_NO,               /* EMPTY */          TO(MOD_NUMBER),      TO(MOD_WINDOW),      TO(MOD_MUSIC),       TO(MOD_CONFIG),      KC_RIGHT_CTRL,
 
     // SIX
     /* LEFT  */ KC_SPACE,            KC_LALT,             KC_ENTER,
@@ -389,8 +391,8 @@ const uint16_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     /* RIGHT */ /* EMPTY */          {RGB_ORANGE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_BLACK},         {RGB_BLACK},
 
     // FIVE
-    /* LEFT  */ {RGB_GOLD},          {RGB_BLACK},         {RGB_BLACK},         {RGB_WHITE},         {RGB_BLACK},         /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_GOLD},
+    /* LEFT  */ {RGB_GOLD},          {RGB_TURQUOISE},     {RGB_GOLDENROD},     {RGB_WHITE},         {RGB_GOLD},          /* EMPTY */          {RGB_RED},
+    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_GOLD},
 
     // SIX
     /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
@@ -415,8 +417,8 @@ const uint16_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     /* RIGHT */ /* EMPTY */          {RGB_BLACK},         {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_BLACK},
 
     // FIVE
-    /* LEFT  */ {RGB_GOLD},          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_BLACK},         {RGB_WHITE},         {RGB_BLACK},         {RGB_BLACK},         {RGB_GOLD},
+    /* LEFT  */ {RGB_GOLD},          {RGB_TURQUOISE},     {RGB_GOLDENROD},     {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_RED},
+    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_CYAN},          {RGB_WHITE},         {RGB_BLUE},          {RGB_RED},           {RGB_GOLD},
 
     // SIX
     /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
@@ -441,8 +443,8 @@ const uint16_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     /* RIGHT */ /* EMPTY */          {RGB_BLACK},         {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},
 
     // FIVE
-    /* LEFT  */ {RGB_GOLD},          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_WHITE},         /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_GOLD},
+    /* LEFT  */ {RGB_GOLD},          {RGB_TURQUOISE},     {RGB_GOLDENROD},     {RGB_PURPLE},        {RGB_WHITE},         /* EMPTY */          {RGB_RED},
+    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_GOLD},
 
     // SIX
     /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
@@ -467,8 +469,8 @@ const uint16_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     /* RIGHT */ /* EMPTY */          {RGB_BLACK},         {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_BLACK},         {RGB_BLACK},
 
     // FIVE
-    /* LEFT  */ {RGB_GOLD},          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_WHITE},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_GOLD},
+    /* LEFT  */ {RGB_GOLD},          {RGB_TURQUOISE},     {RGB_GOLDENROD},     {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_RED},
+    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_WHITE},         {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_GOLD},
 
     // SIX
     /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
@@ -519,8 +521,8 @@ const uint16_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     /* RIGHT */ /* EMPTY */          {RGB_BLACK},         {RGB_GREEN},         {RGB_GREEN},         {RGB_GREEN},         {RGB_GREEN},         {RGB_BLACK},
 
     // FIVE
-    /* LEFT  */ {RGB_GOLD},          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_GOLD},
+    /* LEFT  */ {RGB_GOLD},          {RGB_TURQUOISE},     {RGB_GOLDENROD},     {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_RED},
+    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_GOLD},
 
     // SIX
     /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
@@ -545,8 +547,8 @@ const uint16_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     /* RIGHT */ /* EMPTY */          {RGB_RED},           {RGB_GOLDENROD},     {RGB_GREEN},         {RGB_RED},           {RGB_GOLDENROD},     {RGB_BLACK},
 
     // FIVE
-    /* LEFT  */ {RGB_GOLD},          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_WHITE},         {RGB_GOLD},
+    /* LEFT  */ {RGB_GOLD},          {RGB_TURQUOISE},     {RGB_GOLDENROD},     {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_RED},
+    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_GOLD},
 
     // SIX
     /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
@@ -571,8 +573,8 @@ const uint16_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     /* RIGHT */ /* EMPTY */          {RGB_BLACK},         {RGB_TURQUOISE},     {RGB_TURQUOISE},     {RGB_TURQUOISE},     {RGB_TURQUOISE},     {RGB_BLACK},
 
     // FIVE
-    /* LEFT  */ {RGB_GOLD},          {RGB_WHITE},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_GOLD},
+    /* LEFT  */ {RGB_GOLD},          {RGB_WHITE},         {RGB_GOLDENROD},     {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_RED},
+    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_GOLD},
 
     // SIX
     /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
@@ -597,8 +599,8 @@ const uint16_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     /* RIGHT */ /* EMPTY */          {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          {RGB_SPRINGGREEN},
 
     // FIVE
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_WHITE},         {RGB_BLACK},         {RGB_BLACK},         /* EMPTY */          {RGB_BLACK},
-    /* RIGHT */ {RGB_BLACK},         /* EMPTY */          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_SPRINGGREEN},
+    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_TURQUOISE},     {RGB_WHITE},         {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_BLACK},
+    /* RIGHT */ {RGB_BLACK},         /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_SPRINGGREEN},
 
     // SIX
     /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
@@ -708,49 +710,81 @@ bool rgb_matrix_indicators_user(void) {
   return true;
 }
 
-void switch_language_mod(bool _is_en_lang) {
-  static bool is_en_lang = true;
+bool is_en_lang_current = true;
+bool is_en_lang_temp = true;
 
-  if (is_en_lang != _is_en_lang) {
-    is_en_lang = _is_en_lang;
-
-    register_code(KC_LSFT);
-    tap_code(KC_LALT);
-    unregister_code(KC_LSFT);
-  }
+void switch_language_os(void) {
+  register_code(KC_LSFT);
+  tap_code(KC_LALT);
+  unregister_code(KC_LSFT);
 }
 
 void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch_language_mod(get_highest_layer(layer_state) != MOD_RU);
+  if (!is_en_lang_temp && get_highest_layer(layer_state) != MOD_RU) {
+    is_en_lang_temp = !is_en_lang_temp;
+
+    switch_language_os();
+  }
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
+    case TO_MAIN:
+      if (record->event.pressed) {
+        if (is_en_lang_current != is_en_lang_temp) {
+          is_en_lang_temp = is_en_lang_current;
+
+          switch_language_os();
+        }
+
+        if (is_en_lang_current) {
+          layer_move(MOD_MAIN);
+        } else {
+          layer_move(MOD_RU);
+        }
+      }
+
+      return false;
+    case TO_SWITCH_MAIN:
+      if (record->event.pressed) {
+        switch_language_os();
+
+        is_en_lang_current = !is_en_lang_current;
+        is_en_lang_temp = is_en_lang_current;
+
+        if (is_en_lang_current) {
+          layer_move(MOD_MAIN);
+        } else {
+          layer_move(MOD_RU);
+        }
+      }
+
+      return false;
     case SEND_PASSWORD:
       if (record->event.pressed) {
         SEND_STRING("32" SS_TAP(X_ENTER));
       }
 
       break;
-    case ST_MACRO_1:
+    case SYMBOL_MACRO_1:
       if (record->event.pressed) {
         SEND_STRING(SS_TAP(X_MINUS) SS_DELAY(100) SS_LSFT(SS_TAP(X_NUBS)));
       }
 
       break;
-    case ST_MACRO_2:
+    case SYMBOL_MACRO_2:
       if (record->event.pressed) {
         SEND_STRING(SS_TAP(X_EQUAL) SS_DELAY(100) SS_LSFT(SS_TAP(X_NUBS)));
       }
 
       break;
-    case ST_MACRO_3:
+    case SYMBOL_MACRO_3:
       if (record->event.pressed) {
         SEND_STRING(SS_TAP(X_NUBS) SS_DELAY(100) SS_TAP(X_EQUAL));
       }
 
       break;
-    case ST_MACRO_4:
+    case SYMBOL_MACRO_4:
       if (record->event.pressed) {
         SEND_STRING(SS_LSFT(SS_TAP(X_NUBS)) SS_DELAY(100) SS_TAP(X_EQUAL));
       }
