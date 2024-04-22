@@ -548,7 +548,7 @@ const uint16_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
 
     // FIVE
     /* LEFT  */ {RGB_GOLD},          {RGB_TURQUOISE},     {RGB_GOLDENROD},     {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_GOLD},
+    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_WHITE},         {RGB_GOLD},
 
     // SIX
     /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
