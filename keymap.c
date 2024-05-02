@@ -151,7 +151,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_QUOTE,            KC_NO,               KC_LPRN,             KC_RPRN,             KC_LABK,             KC_RABK,             KC_NO,
 
     // FOUR
-    /* LEFT  */ KC_SPACE,            KC_CIRC,             KC_HASH,             KC_ASTR,             KC_SLASH,            KC_NO,               /* EMPTY */
+    /* LEFT  */ KC_SPACE,            KC_CIRC,             KC_HASH,             KC_ASTR,             KC_SLASH,            KC_BACKSLASH,        /* EMPTY */
     /* RIGHT */ /* EMPTY */          KC_NO,               KC_LCBR,             KC_RCBR,             SYMBOL_MACRO_3,      SYMBOL_MACRO_4,      KC_NO,
 
     // FIVE
@@ -303,20 +303,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_NO,               KC_Y,                KC_U,                KC_I,                KC_UP,               KC_P,                KC_NO,
 
     // THREE
-    /* LEFT  */ KC_TAB,              KC_A,                KC_S,                KC_D,                KC_F,                KC_G,                KC_NO,
-    /* RIGHT */ KC_NO,               KC_H,                KC_J,                KC_LEFT,             KC_DOWN,             KC_RIGHT,            KC_NO,
+    /* LEFT  */ KC_TAB,              KC_A,                KC_S,                KC_D,                KC_F,                KC_G,                KC_LALT,
+    /* RIGHT */ KC_RALT,             KC_H,                KC_J,                KC_LEFT,             KC_DOWN,             KC_RIGHT,            KC_NO,
 
     // FOUR
     /* LEFT  */ KC_LEFT_SHIFT,       KC_Z,                KC_X,                KC_C,                KC_V,                KC_B,                /* EMPTY */
     /* RIGHT */ /* EMPTY */          KC_N,                KC_M,                KC_COMM,             KC_DOT,              KC_SLASH,            KC_RIGHT_SHIFT,
 
     // FIVE
-    /* LEFT  */ KC_LEFT_CTRL,        TO(MOD_MOUSE),       TO_MAIN,             TO(MOD_WORKSPACE),   TO(MOD_SYMBOL),      /* EMPTY */          KC_NO,
+    /* LEFT  */ KC_LEFT_CTRL,        TO(MOD_MOUSE),       TO_MAIN,             TO(MOD_WORKSPACE),   TO(MOD_SYMBOL),      /* EMPTY */          KC_LEFT_GUI,
     /* RIGHT */ KC_NO,               /* EMPTY */          TO(MOD_NUMBER),      TO(MOD_WINDOW),      TO(MOD_MUSIC),       TO(MOD_CONFIG),      KC_RIGHT_CTRL,
 
     // SIX
-    /* LEFT  */ KC_SPACE,            KC_LALT,             KC_ENTER,
-    /* RIGHT */ KC_L,                KC_RALT,             KC_NO
+    /* LEFT  */ KC_SPACE,            KC_BSPC,             KC_ENTER,
+    /* RIGHT */ KC_L,                KC_NO,               KC_NO
   ),
 };
 
@@ -439,7 +439,7 @@ const uint16_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     /* RIGHT */ {RGB_GOLD},          {RGB_BLACK},         {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},
 
     // FOUR
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},         /* EMPTY */
+    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          /* EMPTY */
     /* RIGHT */ /* EMPTY */          {RGB_BLACK},         {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},
 
     // FIVE
@@ -591,20 +591,20 @@ const uint16_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     /* RIGHT */ {RGB_BLACK},         {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          {RGB_CORAL},         {RGB_BLUE},          {RGB_BLACK},
 
     // THREE
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_BLUE},          {RGB_BLUE},          {RGB_BLACK},
-    /* RIGHT */ {RGB_BLACK},         {RGB_BLUE},          {RGB_BLUE},          {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_BLACK},
+    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_BLUE},          {RGB_BLUE},          {RGB_SPRINGGREEN},
+    /* RIGHT */ {RGB_SPRINGGREEN},   {RGB_BLUE},          {RGB_BLUE},          {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_BLACK},
 
     // FOUR
     /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          /* EMPTY */
     /* RIGHT */ /* EMPTY */          {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          {RGB_SPRINGGREEN},
 
     // FIVE
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_TURQUOISE},     {RGB_WHITE},         {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_BLACK},
+    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_TURQUOISE},     {RGB_WHITE},         {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_RED},
     /* RIGHT */ {RGB_BLACK},         /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_SPRINGGREEN},
 
     // SIX
     /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
-    /* RIGHT */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_BLACK}
+    /* RIGHT */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_BLACK}
   },
 };
 
