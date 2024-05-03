@@ -151,7 +151,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_QUOTE,            KC_NO,               KC_LPRN,             KC_RPRN,             KC_LABK,             KC_RABK,             KC_NO,
 
     // FOUR
-    /* LEFT  */ KC_SPACE,            KC_CIRC,             KC_HASH,             KC_ASTR,             KC_SLASH,            KC_BACKSLASH,        /* EMPTY */
+    /* LEFT  */ KC_SPACE,            KC_CIRC,             KC_HASH,             KC_ASTR,             KC_BACKSLASH,        KC_SLASH,            /* EMPTY */
     /* RIGHT */ /* EMPTY */          KC_NO,               KC_LCBR,             KC_RCBR,             SYMBOL_MACRO_3,      SYMBOL_MACRO_4,      KC_NO,
 
     // FIVE
