@@ -328,6 +328,10 @@ typedef struct {
 } moon_rgb_t;
 
 #define KEYCODE_LIST_SIZE(list) (sizeof(list) / sizeof((list)[0]))
+#define NO_CACHED_LAYER 255
+
+static moon_rgb_t layer_color_cache[RGB_MATRIX_LED_COUNT];
+static uint8_t cached_layer = NO_CACHED_LAYER;
 
 static const uint16_t PROGMEM purple_keycodes[] = {
   LCTL(KC_Z), LCTL(KC_C), LCTL(KC_V), LCTL(KC_Q), LCTL(KC_W), LCTL(KC_E), LCTL(KC_R),
@@ -517,28 +521,39 @@ static moon_rgb_t keycode_color(uint8_t layer, uint16_t keycode) {
   return layer_accent_color(layer);
 }
 
-static void matrix_set_key_color(uint8_t layer, uint8_t row, uint8_t col) {
-  uint8_t led_index = g_led_config.matrix_co[row][col];
-
-  if (led_index == NO_LED) {
-    return;
-  }
-
-  uint16_t keycode = pgm_read_word(&keymaps[layer][row][col]);
-  moon_rgb_t color = keycode_color(layer, keycode);
-
-  rgb_matrix_set_color(led_index, color.r, color.g, color.b);
-}
-
 void keyboard_post_init_user(void) {
   rgb_matrix_enable();
 }
 
-void set_layer_color(int layer) {
+static void rebuild_layer_color_cache(uint8_t layer) {
+  for (uint8_t led = 0; led < RGB_MATRIX_LED_COUNT; led++) {
+    layer_color_cache[led] = (moon_rgb_t){RGB_BLACK};
+  }
+
   for (uint8_t row = 0; row < MATRIX_ROWS; row++) {
     for (uint8_t col = 0; col < MATRIX_COLS; col++) {
-      matrix_set_key_color(layer, row, col);
+      uint8_t led_index = g_led_config.matrix_co[row][col];
+
+      if (led_index == NO_LED) {
+        continue;
+      }
+
+      uint16_t keycode = pgm_read_word(&keymaps[layer][row][col]);
+      layer_color_cache[led_index] = keycode_color(layer, keycode);
     }
+  }
+
+  cached_layer = layer;
+}
+
+void set_layer_color(uint8_t layer) {
+  if (cached_layer != layer) {
+    rebuild_layer_color_cache(layer);
+  }
+
+  for (uint8_t led = 0; led < RGB_MATRIX_LED_COUNT; led++) {
+    moon_rgb_t color = layer_color_cache[led];
+    rgb_matrix_set_color(led, color.r, color.g, color.b);
   }
 }
 
