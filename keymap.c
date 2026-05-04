@@ -2,6 +2,7 @@
 #include "version.h"
 #include "i18n.h"
 #define MOON_LED_LEVEL LED_LEVEL
+#define ML_SAFE_RANGE ZSA_SAFE_RANGE
 
 extern rgb_config_t rgb_matrix_config;
 

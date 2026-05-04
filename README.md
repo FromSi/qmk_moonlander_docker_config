@@ -1,27 +1,33 @@
-```bash
-# First build
-mkdir moonlander && \
-cd ./moonlander && \
-git clone --depth 1 git@github.com:FromSi/qmk_moonlander_docker_config.git && \
-git clone --depth 1 --recurse-submodules --branch firmware23 git@github.com:zsa/qmk_firmware.git && \
-cp -r ./qmk_moonlander_docker_config ./qmk_firmware/keyboards/moonlander/keymaps/qmk_moonlander_docker_config && \
-cd ./qmk_firmware && \
-util/docker_build.sh moonlander:qmk_moonlander_docker_config:flash 
-```
+# Moonlander QMK keymap
+
+This setup uses `zsa/qmk_firmware` on the [`firmware25`](https://github.com/zsa/qmk_firmware/tree/firmware25) branch. The default firmware target is `zsa/moonlander/reva`.
+
+## Flash
+
+Put the Moonlander into bootloader/reset mode before running the command below. On the keyboard this is the mode used for flashing/programming firmware.
 
 ```bash
-# Remove config after changed
-rm -rf ./qmk_firmware/keyboards/moonlander/keymaps/qmk_moonlander_docker_config && \
-cp -r ./qmk_moonlander_docker_config ./qmk_firmware/keyboards/moonlander/keymaps/qmk_moonlander_docker_config && \
-cd ./qmk_firmware
+sudo make flash
 ```
 
-```bash
-util/docker_build.sh moonlander:qmk_moonlander_docker_config:flash 
-```
+This is the main command. The first run clones ZSA QMK firmware into `./qmk_firmware`, copies this keymap there, builds the firmware, and flashes the keyboard. Next runs reuse the existing `./qmk_firmware` directory, so they only refresh the keymap files, build, and flash again.
+
+If the keyboard flashes successfully but does not boot, try the other Moonlander revision:
 
 ```bash
-# Remove
-rm -rf ./moonlander && \
-docker image ls | grep 'ghcr.io/qmk/qmk_cli' | awk '{print $3}' | xargs docker image rm
+sudo make flash KEYBOARD_REV=reva
+```
+
+## Clean
+
+```bash
+sudo make clean
+```
+
+This removes the local `./qmk_firmware` clone. The next `sudo make flash` will clone it again.
+
+## Help
+
+```bash
+make help
 ```
