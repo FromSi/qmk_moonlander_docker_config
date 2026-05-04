@@ -106,7 +106,7 @@ Symbol layer with brackets, operators, and macros for compound symbols.
 ┌───────────────────────────────────────────────┐   ┌────────────────────────────────────────────────┐
 │ ESC    C-z    ---    ;      (      C-c    C-v │   │ Left   Right  )      :      ---    PrScr  Pass │
 │ GUI    ~      `      %      @      ---    !   │   │ ?      ---    [      ]      ->     =>     ---  │
-│ Tab    =      |      &      $      +      -   │   │ '      ---    (      )      <      >      ---  │
+│ Tab    =      |      &      $      ---    -   │   │ '      ---    (      )      <      >      ---  │
 │ Space  ^      #      *      \      /          │   │        ---    {      }      <=     >=     ---  │
 │ ,      Mouse  Game   Work   Main              │   │               Num    Win    Music  Config .    │
 │                                         Ctrl  │   │ Alt                                            │
@@ -169,9 +169,9 @@ Configuration layer for bootloader access, RGB brightness, system power, volume,
 ```text
 ┌───────────────────────────────────────────────┐   ┌────────────────────────────────────────────────┐
 │ ESC    C-z    ---    ;      (      C-c    C-v │   │ Left   Right  )      :      ---    PrScr  Pass │
-│ GUI    ---    ---    ---    ---    ---    !   │   │ ?      Boot   RGB+   RGB-   ---    ---    ---  │
-│ Tab    ---    ---    ---    ---    ---    -   │   │ '      Power  Vol+   Vol-   Mute   ---    ---  │
-│ Space  ---    ---    ---    ---    ---        │   │        ---    Next   Play   Stop   Prev   ---  │
+│ GUI    ---    ---    ---    ---    ---    !   │   │ ?      ---    RGB+   Vol+   ---    ---    ---  │
+│ Tab    Prev   Stop   Play   Next   ---    -   │   │ '      ---    RGB-   Vol-   ---    ---    ---  │
+│ Space  ---    ---    ---    ---    ---        │   │        ---    Power  Mute   ---    Boot   ---  │
 │ ,      Mouse  Game   Work   Sym               │   │               Num    Win    Music  Main   .    │
 │                                         Ctrl  │   │ Alt                                            │
 │                           Shift  Bspc   Enter │   │ ---    ---    Space                            │

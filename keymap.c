@@ -148,7 +148,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_QUES,             KC_NO,               KC_LBRC,             KC_RBRC,             SYMBOL_MACRO_1,      SYMBOL_MACRO_2,      KC_NO,
 
     // THREE
-    /* LEFT  */ KC_TAB,              KC_EQUAL,            KC_PIPE,             KC_AMPR,             KC_DLR,              KC_KP_PLUS,          KC_MINUS,
+    /* LEFT  */ KC_TAB,              KC_EQUAL,            KC_PIPE,             KC_AMPR,             KC_DLR,              KC_NO,               KC_MINUS,
     /* RIGHT */ KC_QUOTE,            KC_NO,               KC_LPRN,             KC_RPRN,             KC_LABK,             KC_RABK,             KC_NO,
 
     // FOUR
@@ -249,15 +249,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // TWO
     /* LEFT  */ KC_LEFT_GUI,         KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_EXLM,
-    /* RIGHT */ KC_QUES,             QK_BOOT,             RGB_VAI,             RGB_VAD,             KC_NO,               KC_NO,               KC_NO,
+    /* RIGHT */ KC_QUES,             KC_NO,               RGB_VAI,             KC_AUDIO_VOL_UP,     KC_NO,               KC_NO,               KC_NO,
 
     // THREE
-    /* LEFT  */ KC_TAB,              KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_MINUS,
-    /* RIGHT */ KC_QUOTE,            KC_SYSTEM_POWER,     KC_AUDIO_VOL_UP,     KC_AUDIO_VOL_DOWN,   KC_AUDIO_MUTE,       KC_NO,               KC_NO,
+    /* LEFT  */ KC_TAB,              KC_MEDIA_PREV_TRACK, KC_MEDIA_STOP,       KC_MEDIA_PLAY_PAUSE, KC_MEDIA_NEXT_TRACK, KC_NO,               KC_MINUS,
+    /* RIGHT */ KC_QUOTE,            KC_NO,               RGB_VAD,             KC_AUDIO_VOL_DOWN,   KC_NO,               KC_NO,               KC_NO,
 
     // FOUR
     /* LEFT  */ KC_SPACE,            KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               /* EMPTY */
-    /* RIGHT */ /* EMPTY */          KC_NO,               KC_MEDIA_NEXT_TRACK, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_STOP,       KC_MEDIA_PREV_TRACK, KC_NO,
+    /* RIGHT */ /* EMPTY */          KC_NO,               KC_SYSTEM_POWER,     KC_AUDIO_MUTE,       KC_NO,               QK_BOOT,             KC_NO,
 
     // FIVE
     /* LEFT  */ KC_COMMA,            TO(MOD_MOUSE),       TO(MOD_GAME),        TO(MOD_WORKSPACE),   TO(MOD_SYMBOL),      /* EMPTY */          KC_LEFT_CTRL,
