@@ -353,6 +353,10 @@ static const uint16_t PROGMEM green_keycodes[] = {
   KC_LEFT, KC_RIGHT, KC_UP, KC_DOWN, KC_HOME, KC_END, KC_PGDN, KC_PAGE_UP
 };
 
+static const uint16_t PROGMEM game_green_keycodes[] = {
+  KC_W, KC_A, KC_S, KC_D
+};
+
 static const uint16_t PROGMEM springgreen_keycodes[] = {
   KC_LEFT_GUI, KC_LEFT_SHIFT, KC_BSPC, KC_ENTER, KC_SPACE, KC_TAB, KC_PSCR
 };
@@ -478,6 +482,9 @@ static moon_rgb_t keycode_color(uint8_t layer, uint16_t keycode) {
     return (moon_rgb_t){RGB_GOLD};
   }
   if (keycode_in_list(keycode, green_keycodes, KEYCODE_LIST_SIZE(green_keycodes))) {
+    return (moon_rgb_t){RGB_GREEN};
+  }
+  if (layer == MOD_GAME && keycode_in_list(keycode, game_green_keycodes, KEYCODE_LIST_SIZE(game_green_keycodes))) {
     return (moon_rgb_t){RGB_GREEN};
   }
   if (keycode_in_list(keycode, turquoise_keycodes, KEYCODE_LIST_SIZE(turquoise_keycodes))) {

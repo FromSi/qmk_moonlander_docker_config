@@ -194,7 +194,7 @@ Mouse layer for cursor movement, wheel scrolling, and mouse buttons.
 └───────────────────────────────────────────────┘   └────────────────────────────────────────────────┘
 ```
 
-### MOD_GAME
+### (MOD_GAME)
 
 Gaming layer with a classic WASD block, number row, and dedicated modifiers.
 
