@@ -321,301 +321,206 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 
-const uint16_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
-  [MOD_MAIN] = {
-    // ONE
-    /* LEFT  */ {RGB_RED},           {RGB_PURPLE},        {RGB_BLACK},         {RGB_GOLD},          {RGB_GOLD},          {RGB_PURPLE},        {RGB_PURPLE},
-    /* RIGHT */ {RGB_GREEN},         {RGB_GREEN},         {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},         {RGB_SPRINGGREEN},   {RGB_RED},
-
-    // TWO
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_GREY},          {RGB_GREY},          {RGB_GREY},          {RGB_BLACK},         {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_GREY},          {RGB_GREY},          {RGB_GREY},          {RGB_GREY},          {RGB_GREY},          {RGB_BLACK},
-
-    // THREE
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_WHITE},         {RGB_WHITE},         {RGB_WHITE},         {RGB_WHITE},         {RGB_GREY},          {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_GREY},          {RGB_WHITE},         {RGB_WHITE},         {RGB_WHITE},         {RGB_WHITE},         {RGB_BLACK},
-
-    // FOUR
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_GREY},          {RGB_GREY},          {RGB_GREY},          {RGB_BLACK},         /* EMPTY */
-    /* RIGHT */ /* EMPTY */          {RGB_GREY},          {RGB_GREY},          {RGB_GREY},          {RGB_GREY},          {RGB_GREY},          {RGB_BLACK},
-
-    // FIVE
-    /* LEFT  */ {RGB_GOLD},          {RGB_TURQUOISE},     {RGB_GOLDENROD},     {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_GOLD},
-
-    // SIX
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
-    /* RIGHT */ {RGB_PINK},          {RGB_GREEN},         {RGB_SPRINGGREEN}
-  },
-
-  [MOD_RU] = {
-    // ONE
-    /* LEFT  */ {RGB_RED},           {RGB_PURPLE},        {RGB_BLACK},         {RGB_GOLD},          {RGB_GOLD},          {RGB_PURPLE},        {RGB_PURPLE},
-    /* RIGHT */ {RGB_GREEN},         {RGB_GREEN},         {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},         {RGB_SPRINGGREEN},   {RGB_RED},
-
-    // TWO
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},
-
-    // THREE
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_PINK},          {RGB_PINK},          {RGB_PINK},          {RGB_PINK},          {RGB_CORAL},         {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_CORAL},         {RGB_PINK},          {RGB_PINK},          {RGB_PINK},          {RGB_PINK},          {RGB_CORAL},
-
-    // FOUR
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         /* EMPTY */
-    /* RIGHT */ /* EMPTY */          {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},
-
-    // FIVE
-    /* LEFT  */ {RGB_GOLD},          {RGB_TURQUOISE},     {RGB_GOLDENROD},     {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_GOLD},
-
-    // SIX
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
-    /* RIGHT */ {RGB_WHITE},         {RGB_GREEN},         {RGB_SPRINGGREEN}
-  },
-
-  [MOD_WORKSPACE] = {
-    // ONE
-    /* LEFT  */ {RGB_RED},           {RGB_PURPLE},        {RGB_BLACK},         {RGB_GOLD},          {RGB_GOLD},          {RGB_PURPLE},        {RGB_PURPLE},
-    /* RIGHT */ {RGB_GREEN},         {RGB_GREEN},         {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},         {RGB_SPRINGGREEN},   {RGB_RED},
-
-    // TWO
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_GREEN},         {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_BLACK},         {RGB_BLACK},
-
-    // THREE
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_GREEN},         {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_BLACK},
-
-    // FOUR
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        /* EMPTY */
-    /* RIGHT */ /* EMPTY */          {RGB_ORANGE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_PURPLE},        {RGB_BLACK},         {RGB_BLACK},
-
-    // FIVE
-    /* LEFT  */ {RGB_GOLD},          {RGB_TURQUOISE},     {RGB_GOLDENROD},     {RGB_WHITE},         {RGB_GOLD},          /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_GOLD},
-
-    // SIX
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
-    /* RIGHT */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_SPRINGGREEN}
-  },
-
-  [MOD_WINDOW] = {
-    // ONE
-    /* LEFT  */ {RGB_RED},           {RGB_PURPLE},        {RGB_BLACK},         {RGB_GOLD},          {RGB_GOLD},          {RGB_PURPLE},        {RGB_PURPLE},
-    /* RIGHT */ {RGB_GREEN},         {RGB_GREEN},         {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},         {RGB_SPRINGGREEN},   {RGB_RED},
-
-    // TWO
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_BLACK},         {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_BLACK},
-
-    // THREE
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_BLACK},         {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_BLACK},
-
-    // FOUR
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         /* EMPTY */
-    /* RIGHT */ /* EMPTY */          {RGB_BLACK},         {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_ORANGE},        {RGB_BLACK},
-
-    // FIVE
-    /* LEFT  */ {RGB_GOLD},          {RGB_TURQUOISE},     {RGB_GOLDENROD},     {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_CYAN},          {RGB_WHITE},         {RGB_BLUE},          {RGB_RED},           {RGB_GOLD},
-
-    // SIX
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
-    /* RIGHT */ {RGB_BLACK},         {RGB_BLACK},         {RGB_SPRINGGREEN}
-  },
-
-  [MOD_SYMBOL] = {
-    // ONE
-    /* LEFT  */ {RGB_RED},           {RGB_PURPLE},        {RGB_BLACK},         {RGB_GOLD},          {RGB_GOLD},          {RGB_PURPLE},        {RGB_PURPLE},
-    /* RIGHT */ {RGB_GREEN},         {RGB_GREEN},         {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},         {RGB_SPRINGGREEN},   {RGB_RED},
-
-    // TWO
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},         {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_BLACK},         {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},
-
-    // THREE
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_BLACK},         {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},
-
-    // FOUR
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          /* EMPTY */
-    /* RIGHT */ /* EMPTY */          {RGB_BLACK},         {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},
-
-    // FIVE
-    /* LEFT  */ {RGB_GOLD},          {RGB_TURQUOISE},     {RGB_GOLDENROD},     {RGB_PURPLE},        {RGB_WHITE},         /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_GOLD},
-
-    // SIX
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
-    /* RIGHT */ {RGB_BLACK},         {RGB_BLACK},         {RGB_SPRINGGREEN}
-  },
-
-  [MOD_NUMBER] = {
-    // ONE
-    /* LEFT  */ {RGB_RED},           {RGB_PURPLE},        {RGB_BLACK},         {RGB_GOLD},          {RGB_GOLD},          {RGB_PURPLE},        {RGB_PURPLE},
-    /* RIGHT */ {RGB_GREEN},         {RGB_GREEN},         {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},         {RGB_SPRINGGREEN},   {RGB_RED},
-
-    // TWO
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},
-
-    // THREE
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},
-
-    // FOUR
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          /* EMPTY */
-    /* RIGHT */ /* EMPTY */          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_BLACK},         {RGB_BLACK},
-
-    // FIVE
-    /* LEFT  */ {RGB_GOLD},          {RGB_TURQUOISE},     {RGB_GOLDENROD},     {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_WHITE},         {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_GOLD},
-
-    // SIX
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
-    /* RIGHT */ {RGB_BLACK},         {RGB_BLACK},         {RGB_SPRINGGREEN}
-  },
-
-  [MOD_MUSIC] = {
-    // ONE
-    /* LEFT  */ {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},
-    /* RIGHT */ {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},
-
-    // TWO
-    /* LEFT  */ {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},
-    /* RIGHT */ {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},
-
-    // THREE
-    /* LEFT  */ {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},
-    /* RIGHT */ {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},
-
-    // FOUR
-    /* LEFT  */ {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         /* EMPTY */
-    /* RIGHT */ /* EMPTY */          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},
-
-    // FIVE
-    /* LEFT  */ {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},
-
-    // SIX
-    /* LEFT  */ {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},
-    /* RIGHT */ {RGB_WHITE},         {RGB_BLACK},         {RGB_BLACK}
-  },
-
-  [MOD_MOVE] = {
-    // ONE
-    /* LEFT  */ {RGB_RED},           {RGB_PURPLE},        {RGB_BLACK},         {RGB_GOLD},          {RGB_GOLD},          {RGB_PURPLE},        {RGB_PURPLE},
-    /* RIGHT */ {RGB_GREEN},         {RGB_GREEN},         {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},         {RGB_SPRINGGREEN},   {RGB_RED},
-
-    // TWO
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_BLACK},         {RGB_GREEN},         {RGB_GREEN},         {RGB_GREEN},         {RGB_GREEN},         {RGB_BLACK},
-
-    // THREE
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_BLACK},         {RGB_GREEN},         {RGB_GREEN},         {RGB_GREEN},         {RGB_GREEN},         {RGB_BLACK},
-
-    // FOUR
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         /* EMPTY */
-    /* RIGHT */ /* EMPTY */          {RGB_BLACK},         {RGB_GREEN},         {RGB_GREEN},         {RGB_GREEN},         {RGB_GREEN},         {RGB_BLACK},
-
-    // FIVE
-    /* LEFT  */ {RGB_GOLD},          {RGB_TURQUOISE},     {RGB_GOLDENROD},     {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_GOLD},
-
-    // SIX
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
-    /* RIGHT */ {RGB_BLACK},         {RGB_WHITE},         {RGB_SPRINGGREEN}
-  },
-
-  [MOD_CONFIG] = {
-    // ONE
-    /* LEFT  */ {RGB_RED},           {RGB_PURPLE},        {RGB_BLACK},         {RGB_GOLD},          {RGB_GOLD},          {RGB_PURPLE},        {RGB_PURPLE},
-    /* RIGHT */ {RGB_GREEN},         {RGB_GREEN},         {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},         {RGB_SPRINGGREEN},   {RGB_RED},
-
-    // TWO
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_RED},           {RGB_GREEN},         {RGB_GOLDENROD},     {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},
-
-    // THREE
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_RED},           {RGB_GREEN},         {RGB_GOLDENROD},     {RGB_RED},           {RGB_BLACK},         {RGB_BLACK},
-
-    // FOUR
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         /* EMPTY */
-    /* RIGHT */ /* EMPTY */          {RGB_BLACK},         {RGB_GOLDENROD},     {RGB_GREEN},         {RGB_RED},           {RGB_GOLDENROD},     {RGB_BLACK},
-
-    // FIVE
-    /* LEFT  */ {RGB_GOLD},          {RGB_TURQUOISE},     {RGB_GOLDENROD},     {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_WHITE},         {RGB_GOLD},
-
-    // SIX
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
-    /* RIGHT */ {RGB_BLACK},         {RGB_BLACK},         {RGB_SPRINGGREEN}
-  },
-
-  [MOD_MOUSE] = {
-    // ONE
-    /* LEFT  */ {RGB_RED},           {RGB_PURPLE},        {RGB_BLACK},         {RGB_GOLD},          {RGB_GOLD},          {RGB_PURPLE},        {RGB_PURPLE},
-    /* RIGHT */ {RGB_GREEN},         {RGB_GREEN},         {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},         {RGB_SPRINGGREEN},   {RGB_RED},
-
-    // TWO
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},
-
-    // THREE
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_BLACK},         {RGB_TURQUOISE},     {RGB_TURQUOISE},     {RGB_TURQUOISE},     {RGB_TURQUOISE},     {RGB_BLACK},
-
-    // FOUR
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},         /* EMPTY */
-    /* RIGHT */ /* EMPTY */          {RGB_BLACK},         {RGB_TURQUOISE},     {RGB_TURQUOISE},     {RGB_TURQUOISE},     {RGB_TURQUOISE},     {RGB_BLACK},
-
-    // FIVE
-    /* LEFT  */ {RGB_GOLD},          {RGB_WHITE},         {RGB_GOLDENROD},     {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_RED},           /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_GOLD},
-
-    // SIX
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
-    /* RIGHT */ {RGB_TURQUOISE},     {RGB_TURQUOISE},     {RGB_TURQUOISE}
-  },
-
-  [MOD_GAME] = {
-    // ONE
-    /* LEFT  */ {RGB_RED},           {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},
-    /* RIGHT */ {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_GOLD},          {RGB_GOLD},          {RGB_RED},
-
-    // TWO
-    /* LEFT  */ {RGB_BLACK},         {RGB_BLUE},          {RGB_CORAL},         {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          {RGB_BLACK},
-    /* RIGHT */ {RGB_BLACK},         {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          {RGB_CORAL},         {RGB_BLUE},          {RGB_BLACK},
-
-    // THREE
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_BLUE},          {RGB_BLUE},          {RGB_SPRINGGREEN},
-    /* RIGHT */ {RGB_SPRINGGREEN},   {RGB_BLUE},          {RGB_BLUE},          {RGB_CORAL},         {RGB_CORAL},         {RGB_CORAL},         {RGB_BLACK},
-
-    // FOUR
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          /* EMPTY */
-    /* RIGHT */ /* EMPTY */          {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          {RGB_BLUE},          {RGB_SPRINGGREEN},
-
-    // FIVE
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_TURQUOISE},     {RGB_WHITE},         {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_RED},
-    /* RIGHT */ {RGB_BLACK},         /* EMPTY */          {RGB_CYAN},          {RGB_ORANGE},        {RGB_BLUE},          {RGB_RED},           {RGB_SPRINGGREEN},
-
-    // SIX
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},   {RGB_SPRINGGREEN},
-    /* RIGHT */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_BLACK}
-  },
+typedef struct {
+  uint8_t r;
+  uint8_t g;
+  uint8_t b;
+} moon_rgb_t;
+
+#define KEYCODE_LIST_SIZE(list) (sizeof(list) / sizeof((list)[0]))
+
+static const uint16_t PROGMEM purple_keycodes[] = {
+  LCTL(KC_Z), LCTL(KC_C), LCTL(KC_V), LCTL(KC_Q), LCTL(KC_W), LCTL(KC_E), LCTL(KC_R),
+  LCTL(KC_A), LCTL(KC_S), LCTL(KC_D), LCTL(KC_F), LCTL(KC_X), LCTL(KC_SLASH),
+  LGUI(KC_0), LGUI(KC_1), LGUI(KC_2), LGUI(KC_3), LGUI(KC_4), LGUI(KC_5),
+  LGUI(KC_6), LGUI(KC_7), LGUI(KC_8), LGUI(KC_9), LGUI(KC_Z)
 };
 
-void matrix_set_color(int layer, int key_index, int led_index) {
-  rgb_matrix_set_color(
-    led_index,
-    pgm_read_byte(&ledmap[layer][key_index][0]),
-    pgm_read_byte(&ledmap[layer][key_index][1]),
-    pgm_read_byte(&ledmap[layer][key_index][2])
-  );
+static const uint16_t PROGMEM gold_keycodes[] = {
+  KC_SCLN, KC_COLN, KC_LPRN, KC_RPRN, KC_QUES, KC_QUOTE, KC_MINUS, KC_COMMA, KC_DOT,
+  KC_TILD, KC_GRAVE, KC_PERC, KC_AT, KC_EXLM, KC_EQUAL, KC_PIPE, KC_AMPR, KC_DLR,
+  KC_KP_PLUS, KC_CIRC, KC_HASH, KC_ASTR, KC_BACKSLASH, KC_SLASH, KC_LBRC, KC_RBRC,
+  KC_LCBR, KC_RCBR, KC_LABK, KC_RABK, KC_MINS, KC_COMM, KC_SLSH, KC_QUOT, KC_GRV,
+  SYMBOL_MACRO_1, SYMBOL_MACRO_2, SYMBOL_MACRO_3, SYMBOL_MACRO_4, SYMBOL_MACRO_5,
+  RU_SCLN, RU_LPRN, RU_RPRN, RU_COLN, RU_EXLM, RU_QUES, RU_MINS, RU_DQUO, RU_COMM, RU_DOT
+};
+
+static const uint16_t PROGMEM ru_symbol_key_letters[] = {
+  RU_BE, RU_YU, RU_HA, RU_YO, RU_ZHE, RU_E, RU_HARD
+};
+
+static const uint16_t PROGMEM green_keycodes[] = {
+  KC_LEFT, KC_RIGHT, KC_UP, KC_DOWN, KC_HOME, KC_END, KC_PGDN, KC_PAGE_UP
+};
+
+static const uint16_t PROGMEM springgreen_keycodes[] = {
+  KC_LEFT_GUI, KC_LEFT_SHIFT, KC_BSPC, KC_ENTER, KC_SPACE, KC_TAB, KC_PSCR
+};
+
+static const uint16_t PROGMEM red_keycodes[] = {
+  KC_ESCAPE, KC_LEFT_CTRL, KC_RIGHT_CTRL, KC_LALT, KC_RALT, SEND_PASSWORD, QK_BOOT, KC_SYSTEM_POWER,
+  KC_AUDIO_MUTE, KC_MEDIA_STOP, RGB_TOG, MU_TOGG, MU_NEXT
+};
+
+static const uint16_t PROGMEM turquoise_keycodes[] = {
+  KC_MS_LEFT, KC_MS_RIGHT, KC_MS_UP, KC_MS_DOWN, KC_MS_WH_LEFT, KC_MS_WH_RIGHT, KC_MS_WH_UP,
+  KC_MS_WH_DOWN, KC_MS_BTN1, KC_MS_BTN2, KC_MS_BTN3, KC_MS_BTN4
+};
+
+static const uint16_t PROGMEM config_green_keycodes[] = {
+  RGB_VAI, KC_AUDIO_VOL_UP, KC_MEDIA_PLAY_PAUSE
+};
+
+static const uint16_t PROGMEM config_goldenrod_keycodes[] = {
+  RGB_VAD, KC_AUDIO_VOL_DOWN, KC_MEDIA_NEXT_TRACK, KC_MEDIA_PREV_TRACK
+};
+
+static bool keycode_in_list(uint16_t keycode, const uint16_t *list, uint8_t count) {
+  for (uint8_t i = 0; i < count; i++) {
+    if (keycode == pgm_read_word(&list[i])) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+static uint16_t base_keycode(uint16_t keycode) {
+  if (IS_QK_MODS(keycode)) {
+    return QK_MODS_GET_BASIC_KEYCODE(keycode);
+  }
+
+  return keycode;
+}
+
+static moon_rgb_t layer_accent_color(uint8_t layer) {
+  switch (layer) {
+    case MOD_RU:
+      return (moon_rgb_t){RGB_CORAL};
+    case MOD_WORKSPACE:
+      return (moon_rgb_t){RGB_PURPLE};
+    case MOD_WINDOW:
+      return (moon_rgb_t){RGB_ORANGE};
+    case MOD_SYMBOL:
+      return (moon_rgb_t){RGB_GOLD};
+    case MOD_NUMBER:
+      return (moon_rgb_t){RGB_CYAN};
+    case MOD_MUSIC:
+      return (moon_rgb_t){RGB_BLUE};
+    case MOD_MOVE:
+      return (moon_rgb_t){RGB_GREEN};
+    case MOD_CONFIG:
+      return (moon_rgb_t){RGB_RED};
+    case MOD_MOUSE:
+      return (moon_rgb_t){RGB_TURQUOISE};
+    case MOD_GAME:
+      return (moon_rgb_t){RGB_BLUE};
+    default:
+      return (moon_rgb_t){RGB_WHITE};
+  }
+}
+
+static moon_rgb_t layer_switch_color(uint8_t target_layer) {
+  switch (target_layer) {
+    case MOD_MAIN:
+    case MOD_RU:
+      return (moon_rgb_t){RGB_WHITE};
+    case MOD_MOUSE:
+      return (moon_rgb_t){RGB_TURQUOISE};
+    case MOD_GAME:
+      return (moon_rgb_t){RGB_GOLDENROD};
+    case MOD_WORKSPACE:
+      return (moon_rgb_t){RGB_PURPLE};
+    case MOD_SYMBOL:
+      return (moon_rgb_t){RGB_GOLD};
+    case MOD_NUMBER:
+      return (moon_rgb_t){RGB_CYAN};
+    case MOD_WINDOW:
+      return (moon_rgb_t){RGB_ORANGE};
+    case MOD_MUSIC:
+      return (moon_rgb_t){RGB_BLUE};
+    case MOD_CONFIG:
+      return (moon_rgb_t){RGB_RED};
+    case MOD_MOVE:
+      return (moon_rgb_t){RGB_GREEN};
+    default:
+      return (moon_rgb_t){RGB_BLACK};
+  }
+}
+
+static moon_rgb_t keycode_color(uint8_t layer, uint16_t keycode) {
+  if (keycode == KC_NO || keycode == KC_TRANSPARENT) {
+    return (moon_rgb_t){RGB_BLACK};
+  }
+
+  if (keycode == TO_MAIN || keycode == TO_SWITCH_MAIN) {
+    return layer_switch_color(MOD_MAIN);
+  }
+
+  if (IS_QK_TO(keycode)) {
+    return layer_switch_color(QK_TO_GET_LAYER(keycode));
+  }
+
+  if (layer == MOD_RU && keycode_in_list(keycode, ru_symbol_key_letters, KEYCODE_LIST_SIZE(ru_symbol_key_letters))) {
+    return layer_accent_color(layer);
+  }
+
+  if (keycode_in_list(keycode, red_keycodes, KEYCODE_LIST_SIZE(red_keycodes))) {
+    return (moon_rgb_t){RGB_RED};
+  }
+  if (keycode_in_list(keycode, springgreen_keycodes, KEYCODE_LIST_SIZE(springgreen_keycodes))) {
+    return (moon_rgb_t){RGB_SPRINGGREEN};
+  }
+  if (keycode_in_list(keycode, purple_keycodes, KEYCODE_LIST_SIZE(purple_keycodes))) {
+    return (moon_rgb_t){RGB_PURPLE};
+  }
+  if (keycode_in_list(keycode, gold_keycodes, KEYCODE_LIST_SIZE(gold_keycodes))) {
+    return (moon_rgb_t){RGB_GOLD};
+  }
+  if (keycode_in_list(keycode, green_keycodes, KEYCODE_LIST_SIZE(green_keycodes))) {
+    return (moon_rgb_t){RGB_GREEN};
+  }
+  if (keycode_in_list(keycode, turquoise_keycodes, KEYCODE_LIST_SIZE(turquoise_keycodes))) {
+    return (moon_rgb_t){RGB_TURQUOISE};
+  }
+  if (keycode_in_list(keycode, config_green_keycodes, KEYCODE_LIST_SIZE(config_green_keycodes))) {
+    return (moon_rgb_t){RGB_GREEN};
+  }
+  if (keycode_in_list(keycode, config_goldenrod_keycodes, KEYCODE_LIST_SIZE(config_goldenrod_keycodes))) {
+    return (moon_rgb_t){RGB_GOLDENROD};
+  }
+
+  uint16_t basic = base_keycode(keycode);
+
+  if (KC_1 <= basic && basic <= KC_0) {
+    return (moon_rgb_t){RGB_CYAN};
+  }
+  if (KC_F1 <= basic && basic <= KC_F12) {
+    return (moon_rgb_t){RGB_CYAN};
+  }
+
+  if (IS_QK_MODS(keycode)) {
+    return layer_accent_color(layer);
+  }
+
+  if (KC_A <= basic && basic <= KC_Z) {
+    return layer_accent_color(layer);
+  }
+
+  return layer_accent_color(layer);
+}
+
+static void matrix_set_key_color(uint8_t layer, uint8_t row, uint8_t col) {
+  uint8_t led_index = g_led_config.matrix_co[row][col];
+
+  if (led_index == NO_LED) {
+    return;
+  }
+
+  uint16_t keycode = pgm_read_word(&keymaps[layer][row][col]);
+  moon_rgb_t color = keycode_color(layer, keycode);
+
+  rgb_matrix_set_color(led_index, color.r, color.g, color.b);
 }
 
 void keyboard_post_init_user(void) {
@@ -623,78 +528,11 @@ void keyboard_post_init_user(void) {
 }
 
 void set_layer_color(int layer) {
-  matrix_set_color(layer, 0, 0);
-  matrix_set_color(layer, 1, 5);
-  matrix_set_color(layer, 2, 10);
-  matrix_set_color(layer, 3, 15);
-  matrix_set_color(layer, 4, 20);
-  matrix_set_color(layer, 5, 25);
-  matrix_set_color(layer, 6, 29);
-  matrix_set_color(layer, 7, 65);
-  matrix_set_color(layer, 8, 61);
-  matrix_set_color(layer, 9, 56);
-  matrix_set_color(layer, 10, 51);
-  matrix_set_color(layer, 11, 46);
-  matrix_set_color(layer, 12, 41);
-  matrix_set_color(layer, 13, 36);
-  matrix_set_color(layer, 14, 1);
-  matrix_set_color(layer, 15, 6);
-  matrix_set_color(layer, 16, 11);
-  matrix_set_color(layer, 17, 16);
-  matrix_set_color(layer, 18, 21);
-  matrix_set_color(layer, 19, 26);
-  matrix_set_color(layer, 20, 30);
-  matrix_set_color(layer, 21, 66);
-  matrix_set_color(layer, 22, 62);
-  matrix_set_color(layer, 23, 57);
-  matrix_set_color(layer, 24, 52);
-  matrix_set_color(layer, 25, 47);
-  matrix_set_color(layer, 26, 42);
-  matrix_set_color(layer, 27, 37);
-  matrix_set_color(layer, 28, 2);
-  matrix_set_color(layer, 29, 7);
-  matrix_set_color(layer, 30, 12);
-  matrix_set_color(layer, 31, 17);
-  matrix_set_color(layer, 32, 22);
-  matrix_set_color(layer, 33, 27);
-  matrix_set_color(layer, 34, 31);
-  matrix_set_color(layer, 35, 67);
-  matrix_set_color(layer, 36, 63);
-  matrix_set_color(layer, 37, 58);
-  matrix_set_color(layer, 38, 53);
-  matrix_set_color(layer, 39, 48);
-  matrix_set_color(layer, 40, 43);
-  matrix_set_color(layer, 41, 38);
-  matrix_set_color(layer, 42, 3);
-  matrix_set_color(layer, 43, 8);
-  matrix_set_color(layer, 44, 13);
-  matrix_set_color(layer, 45, 18);
-  matrix_set_color(layer, 46, 23);
-  matrix_set_color(layer, 47, 28);
-  matrix_set_color(layer, 48, 64);
-  matrix_set_color(layer, 49, 59);
-  matrix_set_color(layer, 50, 54);
-  matrix_set_color(layer, 51, 49);
-  matrix_set_color(layer, 52, 44);
-  matrix_set_color(layer, 53, 39);
-  matrix_set_color(layer, 54, 4);
-  matrix_set_color(layer, 55, 9);
-  matrix_set_color(layer, 56, 14);
-  matrix_set_color(layer, 57, 19);
-  matrix_set_color(layer, 58, 24);
-  matrix_set_color(layer, 59, 35);
-  matrix_set_color(layer, 60, 71);
-  matrix_set_color(layer, 61, 60);
-  matrix_set_color(layer, 62, 55);
-  matrix_set_color(layer, 63, 50);
-  matrix_set_color(layer, 64, 45);
-  matrix_set_color(layer, 65, 40);
-  matrix_set_color(layer, 66, 32);
-  matrix_set_color(layer, 67, 33);
-  matrix_set_color(layer, 68, 34);
-  matrix_set_color(layer, 69, 70);
-  matrix_set_color(layer, 70, 69);
-  matrix_set_color(layer, 71, 68);
+  for (uint8_t row = 0; row < MATRIX_ROWS; row++) {
+    for (uint8_t col = 0; col < MATRIX_COLS; col++) {
+      matrix_set_key_color(layer, row, col);
+    }
+  }
 }
 
 bool rgb_matrix_indicators_user(void) {
