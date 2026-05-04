@@ -333,6 +333,24 @@ typedef struct {
 static moon_rgb_t layer_color_cache[RGB_MATRIX_LED_COUNT];
 static uint8_t cached_layer = NO_CACHED_LAYER;
 
+typedef struct {
+  uint8_t layer;
+  uint8_t row;
+  uint8_t col;
+} mode_led_t;
+
+static const mode_led_t mode_leds[] = {
+  {MOD_MOUSE,     4, 1},
+  {MOD_GAME,      4, 2},
+  {MOD_WORKSPACE, 4, 3},
+  {MOD_SYMBOL,    4, 4},
+  {MOD_NUMBER,   10, 2},
+  {MOD_WINDOW,   10, 3},
+  {MOD_MUSIC,    10, 4},
+  {MOD_CONFIG,   10, 5},
+  {MOD_MOVE,     11, 5},
+};
+
 static const uint16_t PROGMEM purple_keycodes[] = {
   LCTL(KC_Z), LCTL(KC_C), LCTL(KC_V), LCTL(KC_Q), LCTL(KC_W), LCTL(KC_E), LCTL(KC_R),
   LCTL(KC_A), LCTL(KC_S), LCTL(KC_D), LCTL(KC_F), LCTL(KC_X), LCTL(KC_SLASH),
@@ -456,6 +474,39 @@ static moon_rgb_t layer_switch_color(uint8_t target_layer) {
   }
 }
 
+static moon_rgb_t blend_to_white(moon_rgb_t color, uint8_t amount) {
+  color.r += ((uint16_t)(255 - color.r) * amount) / 255;
+  color.g += ((uint16_t)(255 - color.g) * amount) / 255;
+  color.b += ((uint16_t)(255 - color.b) * amount) / 255;
+
+  return color;
+}
+
+static uint8_t pulse_amount(void) {
+  uint8_t phase = timer_read() >> 3;
+
+  return phase < 128 ? phase * 2 : (255 - phase) * 2;
+}
+
+static void animate_active_mode_key(uint8_t layer) {
+  for (uint8_t i = 0; i < KEYCODE_LIST_SIZE(mode_leds); i++) {
+    if (mode_leds[i].layer != layer) {
+      continue;
+    }
+
+    uint8_t led_index = g_led_config.matrix_co[mode_leds[i].row][mode_leds[i].col];
+
+    if (led_index == NO_LED) {
+      return;
+    }
+
+    moon_rgb_t color = blend_to_white(layer_switch_color(layer), pulse_amount());
+    rgb_matrix_set_color(led_index, color.r, color.g, color.b);
+
+    return;
+  }
+}
+
 static moon_rgb_t keycode_color(uint8_t layer, uint16_t keycode) {
   if (keycode == KC_NO || keycode == KC_TRANSPARENT) {
     return (moon_rgb_t){RGB_BLACK};
@@ -555,6 +606,8 @@ void set_layer_color(uint8_t layer) {
     moon_rgb_t color = layer_color_cache[led];
     rgb_matrix_set_color(led, color.r, color.g, color.b);
   }
+
+  animate_active_mode_key(layer);
 }
 
 bool rgb_matrix_indicators_user(void) {
