@@ -101,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // FOUR
     /* LEFT  */ KC_SPACE,            LCTL(KC_Z),          LCTL(KC_X),          LCTL(KC_C),          LCTL(KC_V),          LCTL(KC_SLASH),      /* EMPTY */
-    /* RIGHT */ /* EMPTY */          LGUI(KC_Z),          LGUI(KC_8),          LGUI(KC_9),          LGUI(KC_0),          KC_NO,               KC_NO,
+    /* RIGHT */ /* EMPTY */          KC_NO,               LGUI(KC_8),          LGUI(KC_9),          LGUI(KC_0),          KC_NO,               KC_NO,
 
     // FIVE
     /* LEFT  */ KC_COMMA,            TO(MOD_MOUSE),       TO(MOD_GAME),        TO_MAIN,             TO(MOD_SYMBOL),      /* EMPTY */          KC_LEFT_CTRL,
@@ -123,7 +123,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // THREE
     /* LEFT  */ KC_TAB,              LGUI(KC_G),          LGUI(KC_S),          LGUI(KC_F),          LGUI(KC_D),          KC_NO,               KC_MINUS,
-    /* RIGHT */ KC_QUOTE,            LGUI(KC_Z),          LGUI(KC_H),          LGUI(KC_J),          LGUI(KC_K),          LGUI(KC_L),          KC_NO,
+    /* RIGHT */ KC_QUOTE,            KC_NO,               LGUI(KC_H),          LGUI(KC_J),          LGUI(KC_K),          LGUI(KC_L),          KC_NO,
 
     // FOUR
     /* LEFT  */ KC_SPACE,            KC_NO,               KC_NO,               KC_NO,               KC_NO,               KC_NO,               /* EMPTY */

@@ -36,7 +36,7 @@ make help
 
 ### MOD_MAIN
 
-Основной английский слой: буквы, базовая пунктуация, навигация и переходы в остальные моды.
+Main English layer with letters, basic punctuation, navigation, and shortcuts to the other modes.
 
 ```text
 ┌───────────────────────────────────────────────┐   ┌────────────────────────────────────────────────┐
@@ -52,7 +52,7 @@ make help
 
 ### MOD_RU
 
-Русский слой с теми же служебными клавишами и переходами, но буквенная часть отправляет русские символы.
+Russian layer with the same utility keys and mode switches, while the letter area sends Russian characters.
 
 ```text
 ┌───────────────────────────────────────────────┐   ┌────────────────────────────────────────────────┐
@@ -68,14 +68,14 @@ make help
 
 ### MOD_WORKSPACE
 
-Слой рабочих пространств и оконных групп: быстрые переходы через Ctrl/Gui-комбинации.
+Workspace layer for fast workspace and window-group switching through Ctrl/Gui combinations.
 
 ```text
 ┌───────────────────────────────────────────────┐   ┌────────────────────────────────────────────────┐
 │ ESC    C-z    ---    ;      (      C-c    C-v │   │ Left   Right  )      :      ---    PrScr  Pass │
 │ GUI    C-q    C-w    C-e    C-r    G-Ent  !   │   │ ?      Up     G-5    G-6    G-7    ---    ---  │
 │ Tab    C-a    C-s    C-d    C-f    A-d    -   │   │ '      Down   G-1    G-2    G-3    G-4    ---  │
-│ Space  C-z    C-x    C-c    C-v    C-/        │   │        G-z    G-8    G-9    G-0    ---    ---  │
+│ Space  C-z    C-x    C-c    C-v    C-/        │   │        ---    G-8    G-9    G-0    ---    ---  │
 │ ,      Mouse  Game   Main   Sym               │   │               Num    Win    Music  Config .    │
 │                                         Ctrl  │   │ Alt                                            │
 │                           Shift  Bspc   Enter │   │ A-Gui  ---    Space                            │
@@ -84,13 +84,13 @@ make help
 
 ### MOD_WINDOW
 
-Слой управления окнами: перемещение, фокус и варианты команд через Gui/Alt.
+Window-management layer for moving windows, changing focus, and running Gui/Alt command variants.
 
 ```text
 ┌───────────────────────────────────────────────┐   ┌────────────────────────────────────────────────┐
 │ ESC    C-z    ---    ;      (      C-c    C-v │   │ Left   Right  )      :      ---    PrScr  Pass │
 │ GUI    ---    ---    ---    ---    ---    !   │   │ ?      ---    A-G-H  A-G-J  A-G-K  A-G-L  ---  │
-│ Tab    G-g    G-s    G-f    G-d    ---    -   │   │ '      G-z    G-h    G-j    G-k    G-l    ---  │
+│ Tab    G-g    G-s    G-f    G-d    ---    -   │   │ '      ---    G-h    G-j    G-k    G-l    ---  │
 │ Space  ---    ---    ---    ---    ---        │   │        ---    AGSH   AGSJ   AGSK   AGSL   ---  │
 │ ,      Mouse  Game   Work   Sym               │   │               Num    Main   Music  Config .    │
 │                                         Ctrl  │   │ Alt                                            │
@@ -100,7 +100,7 @@ make help
 
 ### MOD_SYMBOL
 
-Символьный слой: скобки, операторы и макросы для составных символов.
+Symbol layer with brackets, operators, and macros for compound symbols.
 
 ```text
 ┌───────────────────────────────────────────────┐   ┌────────────────────────────────────────────────┐
@@ -116,7 +116,7 @@ make help
 
 ### MOD_NUMBER
 
-Числовой слой: F-клавиши слева, цифры справа, служебная навигация снизу.
+Number layer with function keys on the left, digits on the right, and utility navigation at the bottom.
 
 ```text
 ┌───────────────────────────────────────────────┐   ┌────────────────────────────────────────────────┐
@@ -132,7 +132,7 @@ make help
 
 ### MOD_MUSIC
 
-Минимальный слой для музыки и RGB: большинство клавиш отключены, активны только нужные переключатели.
+Minimal music and RGB layer: most keys are disabled, with only the needed toggles active.
 
 ```text
 ┌───────────────────────────────────────────────┐   ┌────────────────────────────────────────────────┐
@@ -148,7 +148,7 @@ make help
 
 ### MOD_MOVE
 
-Слой перемещения: стрелки, Home/End/Page и vim-подобный блок H/J/K/L.
+Movement layer with arrows, Home/End/Page keys, and a Vim-like H/J/K/L block.
 
 ```text
 ┌───────────────────────────────────────────────┐   ┌────────────────────────────────────────────────┐
@@ -164,7 +164,7 @@ make help
 
 ### MOD_CONFIG
 
-Слой настроек: bootloader, RGB-яркость, системное питание, громкость и медиа.
+Configuration layer for bootloader access, RGB brightness, system power, volume, and media controls.
 
 ```text
 ┌───────────────────────────────────────────────┐   ┌────────────────────────────────────────────────┐
@@ -180,7 +180,7 @@ make help
 
 ### MOD_MOUSE
 
-Мышиный слой: движение курсора, колесо и кнопки мыши.
+Mouse layer for cursor movement, wheel scrolling, and mouse buttons.
 
 ```text
 ┌───────────────────────────────────────────────┐   ┌────────────────────────────────────────────────┐
@@ -196,7 +196,7 @@ make help
 
 ### MOD_GAME
 
-Игровой слой: классический WASD-блок, цифры сверху и отдельные модификаторы.
+Gaming layer with a classic WASD block, number row, and dedicated modifiers.
 
 ```text
 ┌───────────────────────────────────────────────┐   ┌────────────────────────────────────────────────┐
