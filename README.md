@@ -73,9 +73,9 @@ Workspace layer for fast workspace and window-group switching through Ctrl/Gui c
 ```text
 ┌───────────────────────────────────────────────┐   ┌────────────────────────────────────────────────┐
 │ ESC    C-z    ---    ;      (      C-c    C-v │   │ Left   Right  )      :      ---    PrScr  Pass │
-│ GUI    C-q    C-w    C-e    C-r    G-Ent  !   │   │ ?      Up     G-5    G-6    G-7    ---    ---  │
-│ Tab    C-a    C-s    C-d    C-f    A-d    -   │   │ '      Down   G-1    G-2    G-3    G-4    ---  │
-│ Space  C-z    C-x    C-c    C-v    C-/        │   │        ---    G-8    G-9    G-0    ---    ---  │
+│ GUI    C-q    C-w    C-e    C-r    ---    !   │   │ ?      G-7    G-8    G-9    ---    ---    ---  │
+│ Tab    C-a    C-s    C-d    C-f    ---    -   │   │ '      G-4    G-5    G-6    ---    ---    ---  │
+│ Space  C-z    C-x    C-c    C-v    C-/        │   │        G-1    G-2    G-3    G-0    ---    ---  │
 │ ,      Mouse  Game   Main   Sym               │   │               Num    Win    Music  Config .    │
 │                                         Ctrl  │   │ Alt                                            │
 │                           Shift  Bspc   Enter │   │ A-Gui  ---    Space                            │
