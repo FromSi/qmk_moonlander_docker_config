@@ -170,16 +170,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* RIGHT */ KC_LEFT,             KC_RIGHT,            KC_RPRN,             KC_COLN,             KC_NO,               KC_PSCR,             SEND_PASSWORD,
 
     // TWO
-    /* LEFT  */ KC_LEFT_GUI,         KC_F8,               KC_F7,               KC_F6,               KC_F5,               KC_NO,               KC_EXLM,
-    /* RIGHT */ KC_QUES,             KC_NO,               KC_4,                KC_5,                KC_6,                KC_NO,               KC_NO,
+    /* LEFT  */ KC_LEFT_GUI,         KC_NO,               KC_F12,              KC_F11,              KC_F10,              KC_F9,               KC_EXLM,
+    /* RIGHT */ KC_QUES,             KC_7,                KC_8,                KC_9,                KC_NO,               KC_NO,               KC_NO,
 
     // THREE
-    /* LEFT  */ KC_TAB,              KC_F4,               KC_F3,               KC_F2,               KC_F1,               KC_NO,               KC_MINUS,
-    /* RIGHT */ KC_QUOTE,            KC_NO,               KC_1,                KC_2,                KC_3,                KC_0,                KC_NO,
+    /* LEFT  */ KC_TAB,              KC_NO,               KC_F8,               KC_F7,               KC_F6,               KC_F5,               KC_MINUS,
+    /* RIGHT */ KC_QUOTE,            KC_4,                KC_5,                KC_6,                KC_NO,               KC_NO,               KC_NO,
 
     // FOUR
-    /* LEFT  */ KC_SPACE,            KC_F12,              KC_F11,              KC_F10,              KC_F9,               KC_NO,               /* EMPTY */
-    /* RIGHT */ /* EMPTY */          KC_NO,               KC_7,                KC_8,                KC_9,                KC_NO,               KC_NO,
+    /* LEFT  */ KC_SPACE,            KC_NO,               KC_F4,               KC_F3,               KC_F2,               KC_F1,               /* EMPTY */
+    /* RIGHT */ /* EMPTY */          KC_1,                KC_2,                KC_3,                KC_0,                KC_NO,               KC_NO,
 
     // FIVE
     /* LEFT  */ KC_COMMA,            TO(MOD_MOUSE),       TO(MOD_GAME),        TO(MOD_WORKSPACE),   TO(MOD_SYMBOL),      /* EMPTY */          KC_LEFT_CTRL,
@@ -458,16 +458,16 @@ const uint16_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     /* RIGHT */ {RGB_GREEN},         {RGB_GREEN},         {RGB_GOLD},          {RGB_GOLD},          {RGB_BLACK},         {RGB_SPRINGGREEN},   {RGB_RED},
 
     // TWO
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_BLACK},         {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_BLACK},         {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_BLACK},         {RGB_BLACK},
+    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_GOLD},
+    /* RIGHT */ {RGB_GOLD},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},
 
     // THREE
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_BLACK},         {RGB_GOLD},
-    /* RIGHT */ {RGB_GOLD},          {RGB_BLACK},         {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_BLACK},
+    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_GOLD},
+    /* RIGHT */ {RGB_GOLD},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_BLACK},         {RGB_BLACK},         {RGB_BLACK},
 
     // FOUR
-    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_BLACK},         /* EMPTY */
-    /* RIGHT */ /* EMPTY */          {RGB_BLACK},         {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_BLACK},         {RGB_BLACK},
+    /* LEFT  */ {RGB_SPRINGGREEN},   {RGB_BLACK},         {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          /* EMPTY */
+    /* RIGHT */ /* EMPTY */          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_CYAN},          {RGB_BLACK},         {RGB_BLACK},
 
     // FIVE
     /* LEFT  */ {RGB_GOLD},          {RGB_TURQUOISE},     {RGB_GOLDENROD},     {RGB_PURPLE},        {RGB_GOLD},          /* EMPTY */          {RGB_RED},
