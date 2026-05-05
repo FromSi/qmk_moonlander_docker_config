@@ -15,7 +15,7 @@ This is the main command. The first run clones ZSA QMK firmware into `./qmk_firm
 If the keyboard flashes successfully but does not boot, try the other Moonlander revision:
 
 ```bash
-sudo make flash KEYBOARD_REV=reva
+sudo make flash KEYBOARD_REV=revb
 ```
 
 ## Clean
